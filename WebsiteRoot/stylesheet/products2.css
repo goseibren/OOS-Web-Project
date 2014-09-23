@@ -193,7 +193,7 @@ li a:hover {
 }
 #background2 {
 	width: 162.6%;
-	height: 90%;
+	height: 87%;
 	position: absolute;
 	margin-left: -32.93%;
 	margin-top: 10%;
@@ -288,13 +288,38 @@ li a:hover {
 /*----------FOOTER-----------*/
 /*---------------------------*/
 
-#pagefooter{
+#footer{
 	position: absolute;
 	width: 100%;
+  top: 100%;
+  height: 15%;
 	z-index: 1000;
-	border: 2px solid blue;
+  text-align: center;
+  color: white;
 }
 
+#footertext{
+  position: absolute;
+  width: 100%;
+  top: 80%;
+  font-size: 22px;
+  padding-bottom: 3%;
+}
+
+/*#footer p{
+  position: absolute;
+  color: white;
+  font-size: 22px;
+  border: 2px solid red;
+  width: 100%;
+}
+
+#footer .torrance{
+  top: 60%;
+}
+#footer .trademark{
+  top: 70%;
+}*/
 /*#pagefootertext{
   text-align: center;
   position: absolute;
