@@ -290,6 +290,15 @@ li a:hover {
   width: 6.5%;
 }
 
+.productimages ul div p{
+  position: absolute;
+  color: white;
+  left: 11%;
+  top: 0;
+  font-size: 25;
+
+}
+
 /*.productimages #shirts p{
   color: black;
   z-index: 10;
