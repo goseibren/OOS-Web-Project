@@ -142,9 +142,9 @@ li a:hover {
 	width: 100%;
 	padding-bottom: 27.88%;
 	z-index: 5;
-	background: 0868a5;
-	background: rgba(8, 104, 165, 0.8);
-	opacity: 0.45;
+	background: 000000;
+	background: rgba(0, 0, 0, 1);
+	opacity: 0.5;
 }
 
 .backgroundfixed{
@@ -154,7 +154,7 @@ li a:hover {
 .backgroundfixed img{
 	position: absolute;
 	width: 100%;
-	top: -18%;
+	top: -22%;
 }
 
 #productheader {
@@ -187,9 +187,10 @@ li a:hover {
   margin-top: 15.72%;
   margin-left: 20.27%;
   width: 61.5%;
-  padding-bottom: 0%;
+  padding-bottom: 3%;
   background: white;
   z-index: 10;
+
 }
 #background2 {
 	width: 162.6%;
@@ -200,6 +201,7 @@ li a:hover {
 	background: eef1f3;
 	background: rgba(238,241,243,1);
 	z-index: -100;
+
 }
 #whitebackground {
 	position: absolute;
@@ -209,20 +211,28 @@ li a:hover {
 	background: white;
 	border: 1px solid cccccc;
 	border: 1px solid rgba(204,204,204,1);
+
 }
 .productimages ul{
   list-style-type: none;
   z-index: 10;
 }
 
-.productimages ul li{
-  display: inline-block;
-  float:left;
-  padding-bottom:28%;
-  width: 100%;
+.productimages ul div{
+  position: relative;
+  width: 90%;
+  padding-bottom: 30%;
   text-align: center;
-  z-index: 11;
-  border: 2px solid red;
+  z-index: 100;
+  overflow: hidden;
+  margin-top: 0.1%;
+  border: 1px solid black;
+  margin-left: 5%;
+  overflow: hidden;
+}
+
+.productimages ul div:first-child{
+  margin-top: 3%;
 }
 
 .productimages ul footer{
@@ -237,26 +247,21 @@ li a:hover {
 
 /*.productimages ul li:hover{
   color: rgba(0,0,0,0.5);
-}
-.productimages img {
-	position: relative;	
-  display: block;
-  width: 100%;
-  float: left;
-  color:black;
-  z-index: 10;
-  opacity: 0;
 }*/
+
+.productimages ul div img {
+	position: absolute;	
+  width: 100%;
+  left: 0;
+  color: black;
+  margin-top: -10%;
+}
 
 /*.productimages #shirts p{
   color: black;
   z-index: 10;
   opacity: 0;
 }*/
-
-.productimages #shirts a{
-  color: black;
-}
 
 /*---------------------------*/
 /*---------SIDENAV-----------*/
