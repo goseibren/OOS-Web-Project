@@ -57,6 +57,9 @@ var productWaitTimer = setInterval(function(){ //logo fade in.
             animateProducts(prodElem[i], "margin-top", "%", -8, 0, 1200);
             animateProducts(prodElem[i], "top", "%", -8, 0, 1200);
         }
+        for(var i=0; i < prodElemText.length; i++){
+            animateProducts(prodElemText[i], "opacity", "", 0, 1, 1500);
+        }
         clearInterval(productWaitTimer);
     }
 }, 25);

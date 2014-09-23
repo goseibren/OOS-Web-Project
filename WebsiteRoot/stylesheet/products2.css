@@ -188,7 +188,6 @@ li a:hover {
   margin-left: 20.27%;
   width: 61.5%;
   padding-bottom: 0%;
-  background: white;
   z-index: 10;
 }
 #background2 {
@@ -227,7 +226,7 @@ li a:hover {
   margin-top: 3%;
 }
 
-.productimages ul footer{
+/*.productimages ul footer{
 	display: inline-block;
 	float:left;		
 	width: 31%;
@@ -235,7 +234,7 @@ li a:hover {
 	text-align: center;
 	margin-top: 3%;
 	z-index: 10;
-}
+}*/
 
 .productimages ul li:hover{
   color: rgba(0,0,0,0.5);
@@ -263,26 +262,6 @@ li a:hover {
 /*---------------------------*/
 /*---------SIDENAV-----------*/
 /*---------------------------*/
-#sidenav {
-  position: fixed;
-  width: 8%;
-  padding-bottom: 0%;
-  margin-top: 29%;
-  margin-left: 12.09%;
-  z-index: 15;
-  background: eef1f3;
-  overflow: hidden;
-}
-
-#sidenav p {
-  margin-left: 8%;
-  font-size: 15;
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-#sidenav:first-child{
-  margin-top: 10%;
-}
 
 /*---------------------------*/
 /*----------FOOTER-----------*/
@@ -293,9 +272,7 @@ li a:hover {
 	width: 100%;
   top: 100%;
   height: 15%;
-	z-index: 1000;
   text-align: center;
-  color: white;
 }
 
 #footertext{
@@ -304,6 +281,7 @@ li a:hover {
   top: 80%;
   font-size: 22px;
   padding-bottom: 3%;
+  color: white;
 }
 
 /*#footer p{
