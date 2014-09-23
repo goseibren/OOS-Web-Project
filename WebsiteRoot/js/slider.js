@@ -56,7 +56,7 @@ function move(newIndex){
 	}
 	// slides[newIndex].style.left = slideLeft;
 	// slides[newIndex].style.display = 'block';
-	animate(slideGroup, "left", "%", currIndex*-100, newIndex*-100, 350);
+	slideAnimate(slideGroup, "left", "%", currIndex*-100, newIndex*-100, 350);
 	// slides[currIndex].style.display = 'none';
 	// slides[newIndex].style.left = '0';
 
@@ -64,7 +64,7 @@ function move(newIndex){
 	
 }
 
-function animate(elem,style,unit,from,to,time) {
+function slideAnimate(elem,style,unit,from,to,time) {
 	var isAnimating = true;
     if( !elem) {
     	advance();
