@@ -1,4 +1,4 @@
-$(function(){
+$(function (){
 
 	var $headeroverlay = $('.backgroundfixed');
 	var $customdivs = $('#customimages div');
@@ -33,10 +33,12 @@ $(function(){
 
 		var $overlayboxtext = $('#customimages .middletext');
 		var $overlayservicebox = $('#overlayservicebox');
+		var $customlogo = $this.children('.customlogo');
+		var $customlogoring = $this.children('.customlogoring');
 
 		$overlayservicebox.css({
 			'background-color': '0868a5',
-			'opacity': '0.85',
+			// 'opacity': '0.85',
 			'width': '100%',
 			'height': '100%',
 			'position': 'absolute',
@@ -45,6 +47,7 @@ $(function(){
 			'z-index': '5',
 		});
 		$overlayboxtext.css({
+			'display': 'none',
 			'position': 'absolute;',
 			'width': '100%',
 			'text-color': 'white', 
@@ -55,6 +58,13 @@ $(function(){
 			'z-index': '100',
 
 		});
+		$overlayservicebox.animate({'opacity': '0.85'}, 400, function(){
+			$overlayboxtext.fadeIn(1000, function(){});
+		});
+		doBounce($customlogo, 3, '-1%', 150);
+		// $overlayboxtext.fadeIn(1200, function(){});
+
+
 	});
 
 	$customdivs.mouseleave(function(){
@@ -63,6 +73,19 @@ $(function(){
 		var $elemToRemove2 = $('.middletext');
 		$elemToRemove.remove();
 		$elemToRemove2.remove();
+		// $overlayservicebox.animate({'opacity': '0'}, 350, function(){
+		// 	$elemToRemove.remove();
+		// });
+		// $overlayboxtext.fadeOut(350, function(){
+		// 	$elemToRemove2.remove();
+		// });
 	});
 
 });
+
+function doBounce(element, times, distance, speed) {
+    for(var i = 0; i < times; i++) {
+        element.animate({marginTop: '-='+distance}, speed)
+            .animate({marginTop: '+='+distance}, speed);
+    }        
+}
