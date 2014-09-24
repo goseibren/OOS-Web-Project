@@ -179,6 +179,7 @@ var logosTimer = setInterval(function(){ //logo fade in.
 	if(isNav === false){
 		logosAnimate(headerLogo, "opacity", "", 0, 1, 1000);
 		logosAnimate(oldLogo, "opacity", "", 0, 1, 1000);
+
 		clearInterval(logosTimer);
 	}
 }, 25);
