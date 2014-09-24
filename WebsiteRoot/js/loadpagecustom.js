@@ -15,32 +15,37 @@ $(function(){
 
 	$customdivs.mouseenter(function(){
 		var $this = $(this);
-		$this.prepend('<div id="overlayservicebox"><p>Hi my name is bren</p></div>');
+		$this.prepend('<div id="overlayservicebox"></div><p class="middletext">Text Will Go Here For Screen Printing</p>');
 		var $overlayservicebox = $('#overlayservicebox');
-		var $overlayboxtext = $('#overlayservicebox p');
+		var $overlayboxtext = $('#customimages .middletext');
 		$overlayservicebox.css({
 			'background-color': 'black',
 			'opacity': '0.7',
 			'width': '100%',
+			'height': '100%',
 			'position': 'absolute',
 			'margin-left': '0',
 			'margin-top': '0',
 			'z-index': '5',
-			'height': '9.5%',
-			'text-align': 'center',
-			'text-color': 'white' 
 		});
-		$overlayserviceboxtext.css({
+		$overlayboxtext.css({
+			'position': 'absolute;',
 			'width': '100%',
-			'border': '2px solid red'
-
+			'text-color': 'white', 
+			'text-align': 'center',
+			'left': '0',
+			'top': '25%',
+			'font-size': '22px',
+			'z-index': '100',
 		});
 	});
 
 	$customdivs.mouseleave(function(){
 		var $this = $(this);
 		var $elemToRemove = $('#overlayservicebox');
+		var $elemToRemove2 = $('.middletext');
 		$elemToRemove.remove();
+		$elemToRemove2.remove();
 	});
 
 });
