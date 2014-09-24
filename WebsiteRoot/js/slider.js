@@ -78,7 +78,7 @@ function slideAnimate(elem,style,unit,from,to,time) {
             	clearInterval(timer);
             	isAnimating = false;
             }
-        },10);
+        },1);
     elem.style[style] = from+unit;
 }
 

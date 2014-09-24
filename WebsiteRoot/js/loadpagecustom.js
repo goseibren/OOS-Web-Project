@@ -1,10 +1,11 @@
 $(function(){
 
-	var $headeroverlay = $('#headercoloroverlay');
+	var $headeroverlay = $('.backgroundfixed');
 	var $customdivs = $('#customimages div');
 	var $customimages = $('#customimages div #custom1,#custom2,#custom3');
 
-	$headeroverlay.animate({opacity: 0.3}, 1250, function(){
+	$headeroverlay.css({'opacity': '0',});
+	$headeroverlay.animate({'opacity': '1'}, 1250, function(){
 		$customdivs.eq(0).animate({opacity: 1}, 500, function(){
 			$customdivs.eq(1).animate({opacity: 1}, 500, function(){
 				$customdivs.eq(2).animate({opacity: 1}, 500, function(){
