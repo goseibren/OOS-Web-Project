@@ -140,7 +140,7 @@ li a:hover {
 #headercoloroverlay{
 	position: absolute;
 	width: 100%;
-	padding-bottom: 27.88%;
+	padding-bottom: 21.9%;
 	z-index: 5;
 	background: 0868a5;
 	background: rgba(8, 104, 165, 0.8);
@@ -148,13 +148,17 @@ li a:hover {
 }
 
 .backgroundfixed{
-	width: 100%;
+	position: absolute;
+  width: 100%;
+  padding-bottom: 21.9%;
+  overflow: hidden;
+
 }
 
 .backgroundfixed img{
 	position: absolute;
 	width: 100%;
-	top: -18%;
+	top: -55%;
 }
 
 #productheader {

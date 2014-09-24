@@ -140,7 +140,7 @@ li a:hover {
 #headercoloroverlay{
 	position: absolute;
 	width: 100%;
-	padding-bottom: 27.88%;
+	padding-bottom: 21.9%;
 	z-index: 5;
 	background: 000000;
 	background: rgba(0, 0, 0, 1);
@@ -148,13 +148,16 @@ li a:hover {
 }
 
 .backgroundfixed{
+  position: absolute;
 	width: 100%;
+  padding-bottom: 21.9%;
+  overflow: hidden;
 }
 
 .backgroundfixed img{
 	position: absolute;
 	width: 100%;
-	top: -22%;
+	top: -35%;
 }
 
 #productheader {
@@ -245,8 +248,16 @@ li a:hover {
   width: 100%;
   left: 0;
   color: black;
-  top: -10%;
   z-index: 0;
+}
+.custom  ul div #custom1{
+top: -40%;
+}
+.custom  ul div #custom2{
+top: -60%;
+}
+.custom  ul div #custom3{
+top: -15%;
 }
 
 .custom  ul div #circlering {

@@ -75,26 +75,32 @@
 
 var $prodHeadElem = $('.backgroundfixed');
 var $prodElem = $('.productimages img');
-var $prodElemText = $('.productimages p');
+var $prodElemText = $('.productimages ul p');
 var $prodBoth = $prodElem.add($prodElemText);
 
 $prodHeadElem.css({'opacity': '0'}); //default to 0
 $prodHeadElem.animate({opacity: 1}, 1250, function(){
-    $prodBoth.css({
-        'margin-top': '-8%',
-        'top': '-8%',
+    $prodElem.css({
+        'margin-top': '-10%',
+        'top': '-10%',
         'opacity': '0',
     });
+    $prodElemText.css({
+        'margin-top': '-4%',
+        'top': '-4%',
+        'opacity': '0',
+    });
+
 
     $prodBoth.animate({
         'margin-top': '0%',
         'top': '0%',
-    }, {duration: 1200, queue: false}, function(){
+    }, {duration: 2000, queue: false}, function(){
     });
 
     $prodBoth.animate({
         'opacity': '1',
-    }, {duration: 1500, queue: false}, function(){
+    }, {duration: 3000, queue: false}, function(){
     });
 
 });
