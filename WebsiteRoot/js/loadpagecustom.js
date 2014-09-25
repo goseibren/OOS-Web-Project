@@ -20,7 +20,7 @@ $(function (){
 
 		switch(currentIndex){
 			case 0:
-				$this.prepend('<p class="middletext">Text Will Go Here For Screen Printing<br>Text Will Go Here For Screen Printing<br>Text Will Go Here For Screen Printing</p>');
+				$this.prepend('<p class="middletext">Text Will Go Here For Screen Printing<br>Text Will Go Here For Screen Printing<br>Text Will Go Here For Screen Printing<br></p>');
 				break;
 			case 1:
 				$this.prepend('<p class="middletext">Text Will Go Here For Heat Transfer<br>Text Will Go Here For Heat Transfer<br>Text Will Go Here For Heat Transfer</p>');	
@@ -30,11 +30,13 @@ $(function (){
 				break;
 		}
 		$this.prepend('<div id="overlayservicebox"></div>');
+		$this.prepend('<img src="images/rectangular.svg" id="contactbutton"></img>');
 
 		var $overlayboxtext = $('#customimages .middletext');
 		var $overlayservicebox = $('#overlayservicebox');
 		var $customlogo = $this.children('.customlogo');
 		var $customlogoring = $this.children('.customlogoring');
+		var $contactbutton = $this.children('#contactbutton');
 
 		$overlayservicebox.css({
 			'background-color': '0868a5',
@@ -53,17 +55,47 @@ $(function (){
 			'text-color': 'white', 
 			'text-align': 'center',
 			'left': '0',
-			'top': '25%',
-			'font-size': '22px',
+			'top': '35%',
+			'font-size': '18px',
 			'z-index': '100',
-
 		});
-		$overlayservicebox.animate({'opacity': '0.85'}, 400, function(){
-			$overlayboxtext.fadeIn(1000, function(){});
+
+		$contactbutton.css({
+			'display': 'none',
+			'position': 'absolute',
+			'z-index': '10',
+			'width': '12%',
+			'top': '20%',
+			'left': '44%',
+			'opacity': '0.5',
+		});
+
+
+
+		$overlayservicebox.animate({'opacity': '0.85'}, 1300, function(){
+			$contactbutton.fadeIn(500, function(){
+				$overlayboxtext.fadeIn(1000, function(){
+				});
+			});
 		});
 		doBounce($customlogo, 3, '-1%', 150);
 		// $overlayboxtext.fadeIn(1200, function(){});
+		//on hover and on click cases for the contact button
 
+		$contactbutton.mouseenter(function(){
+			$(this).css({
+				'opacity': '1',
+			});
+		});
+		$contactbutton.mouseleave(function(){
+			$(this).css({
+				'opacity': '0.5',
+				'background': 'none',
+			});
+		});
+		$contactbutton.on("click", function(){
+
+		})
 
 	});
 
@@ -71,8 +103,10 @@ $(function (){
 		var $this = $(this);
 		var $elemToRemove = $('#overlayservicebox');
 		var $elemToRemove2 = $('.middletext');
+		var $elemToRemove3 = $('#contactbutton');
 		$elemToRemove.remove();
 		$elemToRemove2.remove();
+		$elemToRemove3.remove();
 		// $overlayservicebox.animate({'opacity': '0'}, 350, function(){
 		// 	$elemToRemove.remove();
 		// });
@@ -80,6 +114,7 @@ $(function (){
 		// 	$elemToRemove2.remove();
 		// });
 	});
+
 
 });
 

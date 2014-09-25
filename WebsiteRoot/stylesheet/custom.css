@@ -144,7 +144,7 @@ li a:hover {
 	z-index: 5;
 	background: 014a67;
   background: rgb(0, 0, 0);
-  opacity: 0.45;
+  opacity: 0.5;
 }
 
 .backgroundfixed{
@@ -228,15 +228,16 @@ li a:hover {
   text-align: center;
   z-index: 100;
   overflow: hidden;
-  margin-top: 0.1%;
+  margin-top: 0%;
   border: 1px solid black;
   margin-left: 5%;
   overflow: hidden;
+  text-overflow: ellipsis;
   opacity: 0;
 }
 
 .custom ul div:first-child{
-  margin-top: 3%;
+  margin-top: 4.8%;
 }
 
 /*.productimages ul li:hover{
