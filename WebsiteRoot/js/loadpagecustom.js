@@ -67,15 +67,20 @@ $(function (){
 			'width': '12%',
 			'top': '20%',
 			'left': '44%',
-			'opacity': '1',
+			'opacity': '0.5',
 		});
 
 
 
-		$overlayservicebox.animate({'opacity': '0.85'}, 1100, function(){
-			$contactbutton.fadeIn(500, function(){});
-			$contactbutton.animate({'opacity': '0.5'}, 500, function(){});
-			$overlayboxtext.fadeIn(500, function(){});
+		$overlayservicebox.animate({'opacity': '0.85'}, 1200, function(){
+			$overlayboxtext.fadeIn(500, function(){
+				$contactbutton.fadeIn(500, function(){
+				});
+				$contactbutton.animate({'opacity': '1'}, 500, function(){
+					doBounce($(this), 2, '-1%', 100);
+					$contactbutton.animate({'opacity': '0.5'}, 700, function(){});
+				});
+			});
 		});
 		doBounce($customlogo, 3, '-1%', 150);
 		// $overlayboxtext.fadeIn(1200, function(){});
