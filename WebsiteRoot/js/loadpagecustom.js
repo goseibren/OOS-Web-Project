@@ -67,21 +67,19 @@ $(function (){
 			'width': '12%',
 			'top': '20%',
 			'left': '44%',
-			'opacity': '0.5',
+			'opacity': '1',
 		});
 
 
 
-		$overlayservicebox.animate({'opacity': '0.85'}, 1300, function(){
-			$contactbutton.fadeIn(500, function(){
-				$overlayboxtext.fadeIn(1000, function(){
-				});
-			});
+		$overlayservicebox.animate({'opacity': '0.85'}, 1100, function(){
+			$contactbutton.fadeIn(500, function(){});
+			$contactbutton.animate({'opacity': '0.5'}, 500, function(){});
+			$overlayboxtext.fadeIn(500, function(){});
 		});
 		doBounce($customlogo, 3, '-1%', 150);
 		// $overlayboxtext.fadeIn(1200, function(){});
 		//on hover and on click cases for the contact button
-
 		$contactbutton.mouseenter(function(){
 			$(this).css({
 				'opacity': '1',
@@ -93,9 +91,10 @@ $(function (){
 				'background': 'none',
 			});
 		});
-		$contactbutton.on("click", function(){
+		$contactbutton.click(function(){
+			window.location.replace("contact.html");
+		});
 
-		})
 
 	});
 
