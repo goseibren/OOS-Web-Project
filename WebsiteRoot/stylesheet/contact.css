@@ -235,70 +235,30 @@ li a:hover {
   opacity: 0;
 }
 
-.custom ul div:first-child{
-  margin-top: 3%;
+.custom ul form:first-child{
+  position: relative;
+  margin-top: 5%;
+  left: 35%;
 }
 
-/*.productimages ul li:hover{
-  color: rgba(0,0,0,0.5);
-}*/
-
-.custom  ul div #custom1,#custom2,#custom3 {
-	position: absolute;	
-  width: 100%;
-  left: 0;
-  color: black;
-  z-index: 0;
+.custom ul form input{
+  width: 30%;
+  font-size: 23px;
 }
-.custom  ul div #custom1{
-top: -40%;
+.custom ul form select{
+  width: 30%;
+  font-size: 23px;
 }
-.custom  ul div #custom2{
-top: -60%;
-}
-.custom  ul div #custom3{
-top: -15%;
+.custom ul form textarea{
+  width: 30%;
+  font-size: 15px;
+  height: 100px;
 }
 
-.custom  ul div #circlering {
-  position: absolute;
-  z-index: 100;
+.custom ul form .btn{
   width: 10%;
-  left: 0;
-  top: 0;
-}
-
-.custom  ul div #silkscreen {
-  position: absolute;
-  z-index: 100;
-  left: 1.4%;
-  top: 4%;
-  width: 7%;
-}
-
-.custom  ul div #heatpress {
-  position: absolute;
-  z-index: 100;
-  left: 1.5%;
-  top: 5%;
-  width: 7%;
-}
-
-.custom ul div #stickers {
-  position: absolute;
-  z-index: 100;
-  left: 1.75%;
-  top: 5%;
-  width: 6.5%;
-}
-
-.custom  ul div p{
-  position: absolute;
-  color: white;
-  left: 11%;
-  top: 0;
-  font-size: 25;
-  z-index: 10;
+  height:2.5em;
+  margin-left: 10%;
 }
 
 /*.productimages #shirts p{

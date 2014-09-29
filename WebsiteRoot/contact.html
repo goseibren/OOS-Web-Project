@@ -3,6 +3,7 @@
 	<head>
 		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 		<title>OOS Products</title>	
+		<link rel"stylesheet" href="stylesheet/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="stylesheet/contact.css">
 	</head>
 	<body>
@@ -58,17 +59,22 @@
 				</div>
 			</div>
 			</div>
-			<ul id="customimages">		
-			</ul>
-			<ul id="tanks">
-			</ul>
-			<ul id="sweats">
-			</ul>
-			<ul id="hats">
-			</ul>
-			<ul id="beanies">
-			</ul>
-			<ul id="accessories">
+			<ul id="customimages">
+				<form>
+					<input type="text" placeholder="First Name"></input><br>
+					<input type="text" placeholder="Last Name"></input><br>
+					<input type="text" placeholder="Email Address"></input><br>
+					<input type="text" placeholder="Phone Number"></input><br>
+					<br>
+					<select>
+					  <option>Silk Screening</option>
+					  <option>Heat Transfers</option>
+					  <option>Stickers/Decals</option>
+					  <option>Other</option>
+					</select><br>
+					<textarea type="text" rows="3" placeholder="More Details"></textarea><br><br>
+					<button type="submit" class="btn">Submit</button>
+				</form>		
 			</ul>
 		</div>
 		<script src="js/jquery-1.11.1.min.js"></script>

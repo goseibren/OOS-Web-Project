@@ -67,19 +67,19 @@ $(function (){
 			'width': '12%',
 			'top': '20%',
 			'left': '44%',
-			'opacity': '0.5',
+			'opacity': '0.3',
 		});
 
 
 
-		$overlayservicebox.animate({'opacity': '0.85'}, 1200, function(){
+		$overlayservicebox.animate({'opacity': '0.85'}, 1000, function(){
 			$overlayboxtext.fadeIn(500, function(){
 			});
 			$contactbutton.fadeIn(500, function(){
 				});
 				$contactbutton.animate({'opacity': '1'}, 500, function(){
 					doBounce($(this), 2, '-1%', 100);
-					$contactbutton.animate({'opacity': '0.5'}, 700, function(){});
+					$contactbutton.animate({'opacity': '0.3'}, 700, function(){});
 				});
 		});
 		doBounce($customlogo, 3, '-1%', 150);
