@@ -1,14 +1,16 @@
 <DOCTYPE! html>
 <html>
-	<head>
-		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-		<title>OOS Products</title>	
-		<link rel="stylesheet" type="text/css" href="stylesheet/products2.css">
-	</head>
-	<body>
-		<div class="headrectwrapper">
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+	<title>OurOwnStyle</title>	
+	<link rel="stylesheet" type="text/css" href="stylesheet/homedefault.css">
+	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+</head>
+
+<body>
+	<div class="headrectwrapper">
 		<div class="headrect">
-			<a href="home.html">
+			<a href="#">
 				<img src="images/LogoBlue.svg" class="OOSlogo"></img>
 				<img src="images/oldlogowhite.png" class="oldlogo"></img>
 			</a>
@@ -32,61 +34,35 @@
 	</div> -->
 	<div class="nav">
 		<ul class="MenuButtons">
-			<li><a href="home.html">Home</a></li>
+			<li><a href="#" style="color: 049ef4">Home</a></li>
 			<li><a href="http://www.ourownlifestyle.com" target="_blank">Lifestyle</a></li>
-			<li><a href="#" style="color: 049ef4">Products</a></li>
+			<li><a href="products2.html">Products</a></li>
 			<li><a href="custom.html">Custom</a></li>
 			<li><a href="contact.html">Contact</a></li>
-			<li><a href="index.html">Cart</a></li>
+			<li><a href="#">Cart</a></li>
 		</ul>
 	</div>
-	<div id="headercoloroverlay">
-	</div>
-	<div class="backgroundfixed">
-		<img src="images/headerpicture.png"></img>
-	</div>
-	<div id="productheader">
-		<p id="prodheadtext">DESIGNS</p>
-	</div>
-	<div class="productimages">
-		<div id="whitebackground"></div>
-		<div id="background2">
-			<div id ="footer">
-				<div id = "footertext">
-					<p class ="torrance">Torrance, CA</p>
-					<p class="trademark">&copy 2014 OurOwnStyle</p>
-				</div>
-			</div>
+	<div class = "slider-viewer">
+		<ul class="slide-group">
+
+			<li class="slide slide-1"><img src ="images/Slideshow2.jpg"></img></li>
+			<li class="slide slide-2"><img src ="images/Slideshow6.jpg"></img></li>
+			<li class="slide slide-3"><img src ="images/Slideshow5-1.jpg"></img></li>
+			<li class="slide slide-4"><img src ="images/Slideshow2-1.jpg"></img></li>
+			<li class="slide slide-5"><img src ="images/Slideshow1.jpg"></img></li>
+		</ul>
+		<div id="slide-buttons">
 		</div>
-		<!-- <ul id="sortbar">
-			<li> --> 
-		</ul>
-		<ul id="shirts">
-			<a href="#"><li><img src="images/shirt1.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-			<a href="#"><li><img src="images/shirt2.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-			<a href="#"><li><img src="images/shirt3.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-			<a href="#"><li><img src="images/shirt4.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-			<a href="#"><li><img src="images/shirt5.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-			<a href="#"><li><img src="images/shirt1.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-			<a href="#"><li><img src="images/shirt2.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-			<a href="#"><li><img src="images/shirt3.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-			<a href="#"><li><img src="images/shirt4.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-			<a href="#"><li><img src="images/shirt5.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-			<a href="#"><li><img src="images/shirt1.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-			<a href="#"><li><img src="images/shirt2.png"></img><p>PRODUCT NAME</br>$15.00</p></li></a>
-		</ul>
-		<ul id="tanks">
-		</ul>
-		<ul id="sweats">
-		</ul>
-		<ul id="hats">
-		</ul>
-		<ul id="beanies">
-		</ul>
-		<ul id="accessories">
-		</ul>
+		<div id="arrow-buttons">
+		</div>
 	</div>
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/loadpageproduct2.js"></script>
-	</body>
+	<script src="js/slider.js"></script>
+</body>
+<footer>
+	<svg class="footerbox"></svg>
+	<div class="footertext">
+		<p class ="Torrance">Torrance, CA</p>
+		<p class="trademark">&copy 2014 OurOwnStyle</p>
+	</div>
+</footer>
 </html>
