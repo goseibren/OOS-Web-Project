@@ -235,6 +235,45 @@ li a:hover {
   overflow: hidden;
   opacity: 0;
 }
+.custom #contactimages{
+  width: 100%;
+  border: 1px solid black;
+
+}
+.custom #contactimages li{
+  position: relative;
+  display: inline-block;
+  float:left;
+  width: 25%;
+  padding-bottom: 23%;
+  overflow:hidden;
+}
+
+.custom #contactimages .contactimg1{
+  position: absolute;
+  width: 100%;
+}
+.custom #contactimages .contactimg2{
+  position: absolute;
+  width: 120%;
+  left: -10%;
+  top:;
+}
+.custom #contactimages .contactimg3{
+  position: absolute;
+  width: 165%;
+  left: -25%;
+}
+.custom #contactimages .contactimg4{
+  position: absolute;
+  width: 140%;
+  left: -15%;
+}
+
+.custom #contactimages img{
+  position: absolute;
+  width: 100%;
+}
 
 .custom ul form:first-child{
   position: relative;
