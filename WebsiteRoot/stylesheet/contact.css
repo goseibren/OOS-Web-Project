@@ -219,6 +219,7 @@ li a:hover {
 .custom ul{
   list-style-type: none;
   z-index: 10;
+  overflow: hidden;
 }
 
 .custom ul div{
@@ -239,11 +240,13 @@ li a:hover {
   position: relative;
   margin-top: 5%;
   left: 35%;
+  width: 100%;
 }
 
 .custom ul form input{
   width: 30%;
-  font-size: 23px;
+  font-size: 20px;
+  height: 1.9em;
 }
 .custom ul form select{
   width: 30%;
@@ -252,7 +255,7 @@ li a:hover {
 .custom ul form textarea{
   width: 30%;
   font-size: 15px;
-  height: 100px;
+  height: 17em;
 }
 
 .custom ul form .btn{
