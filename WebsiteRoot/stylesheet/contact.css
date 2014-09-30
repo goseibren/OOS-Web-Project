@@ -144,7 +144,7 @@ li a:hover {
 	z-index: 5;
 	background: 014a67;
   background: rgb(0, 0, 0);;
-  opacity: 0.3;
+  opacity: 0.45;
 }
 
 .backgroundfixed{
@@ -222,6 +222,25 @@ li a:hover {
   overflow: hidden;
 }
 
+.custom #contact-textbox{
+  width: 100%;
+  border: 1px solid rgba(204,204,204,1);;
+  padding-bottom: 3%;
+}
+
+.custom .contact-text1{
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  margin-top: 3%;
+}
+
+.custom .contact-text2{
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+}
+
 .custom ul div{
   position: relative;
   width: 90%;
@@ -245,7 +264,7 @@ li a:hover {
   display: inline-block;
   float:left;
   width: 25%;
-  padding-bottom: 23%;
+  padding-bottom: 21%;
   overflow:hidden;
 }
 
