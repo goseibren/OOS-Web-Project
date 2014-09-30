@@ -256,6 +256,7 @@ li a:hover {
 }
 .custom #contactimages{
   width: 100.15%;
+  background: white;
   /*margin-left: 0.1878%;*/
   /*border: 1px solid black;*/
 
@@ -321,6 +322,7 @@ li a:hover {
   width: 10%;
   height:2.5em;
   margin-left: 10%;
+  font-size: 14px;
 }
 
 /*.productimages #shirts p{

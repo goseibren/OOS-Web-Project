@@ -74,6 +74,7 @@
 //***************************//
 
 var $prodHeadElem = $('.backgroundfixed');
+var $prodElemListItem = $('.productimages li');
 var $prodElem = $('.productimages img');
 var $prodElemText = $('.productimages ul p');
 var $prodBoth = $prodElem.add($prodElemText);
@@ -95,12 +96,21 @@ $prodHeadElem.animate({opacity: 1}, 1250, function(){
     $prodBoth.animate({
         'margin-top': '0%',
         'top': '0%',
-    }, {duration: 2000, queue: false}, function(){
+    }, {duration: 1500, queue: false}, function(){
     });
 
     $prodBoth.animate({
         'opacity': '1',
-    }, {duration: 3000, queue: false}, function(){
+    }, {duration: 2000, queue: false}, function(){
     });
 
 });
+
+$prodElemListItem.mouseenter(function(){
+
+    $(this).animate({'opacity': '+=-0.5',}, 300, function(){});
+});
+$prodElemListItem.mouseleave(function(){
+    $(this).animate({'opacity': '-=-0.5',}, 0, function(){});
+});
+

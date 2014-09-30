@@ -189,6 +189,7 @@ li a:hover {
   height: 100%;
   z-index: 5;
   padding: 3%;
+  opacity: 0.8;
   display:inline-block;
 }
 

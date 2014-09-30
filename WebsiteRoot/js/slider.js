@@ -152,8 +152,16 @@ for(index = 0; index < slides.length; index++){
 
 }
 
-
 advance();
 
+var $buttons = $('buttonbot');
+$buttons.mouseenter(function(){
+	$(this).animate({'opacity': '+=0.5'}, 300, function(){
+	});
+});
+$buttons.mouseleave(function(){
+	$(this).animate({'opacity': '-=0.5'}, 0, function(){
+	});
+})
  
 
