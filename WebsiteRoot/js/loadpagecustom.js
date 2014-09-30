@@ -100,11 +100,17 @@ $(function (){
 			window.location.replace("contact.html");
 		});
 
-
+		$customimages.eq(currentIndex).animate({
+				'width': '+=40%',
+				'margin-top': '+=-8%',
+				'margin-left': '+=-20%',
+			}, 800, function(){
+		});
 	});
 
 	$customdivs.mouseleave(function(){
 		var $this = $(this);
+		var currentIndex = $this.index();
 		var $elemToRemove = $('#overlayservicebox');
 		var $elemToRemove2 = $('.middletext');
 		var $elemToRemove3 = $('#contactbutton');
@@ -117,6 +123,12 @@ $(function (){
 		// $overlayboxtext.fadeOut(350, function(){
 		// 	$elemToRemove2.remove();
 		// });
+		$customimages.eq(currentIndex).animate({
+				'width': '-=40%',
+				'margin-top': '-=-8%',
+				'margin-left': '-=-20%',
+			}, 0, function(){				
+		});
 	});
 
 
