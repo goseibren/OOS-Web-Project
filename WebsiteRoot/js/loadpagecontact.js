@@ -1,9 +1,22 @@
 
 $(function(){
-	var $contactimages = $('.custom #contactimages li');
+	var $contactimages = $('.custom #contactimages li img');
+	var $contactimagebox = $('.custom #contactimages');
 	var $headeroverlay = $('.backgroundfixed');
 
+	$contactimages.css({
+		'display': 'none',
+	});
+
 	$headeroverlay.css({'opacity': '0',});
-	$headeroverlay.animate({'opacity': '1',}, {duration: 1250, queue: false}, function(){
+	$headeroverlay.animate({'opacity': '1',}, 1250, function(){
+		$contactimages.eq(0).fadeIn(500,function(){
+			$contactimages.eq(1).fadeIn(500,function(){
+				$contactimages.eq(2).fadeIn(500,function(){
+					$contactimages.eq(3).fadeIn(500,function(){
+					});
+				});
+			});
 		});
+	});
 });
