@@ -255,8 +255,8 @@ li a:hover {
   opacity: 0;
 }
 .custom #contactimages{
-  width: 100%;
-  margin-left: 0.1878%;
+  width: 100.15%;
+  /*margin-left: 0.1878%;*/
   /*border: 1px solid black;*/
 
 }
@@ -286,7 +286,7 @@ li a:hover {
 }
 .custom #contactimages .contactimg4{
   position: absolute;
-  width: 140%;
+  width: 160%;
   left: -15%;
 }
 

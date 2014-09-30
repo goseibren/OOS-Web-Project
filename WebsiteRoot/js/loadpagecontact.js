@@ -10,10 +10,10 @@ $(function(){
 
 	$headeroverlay.css({'opacity': '0',});
 	$headeroverlay.animate({'opacity': '1',}, 1250, function(){
-		$contactimages.eq(0).fadeIn(500,function(){
-			$contactimages.eq(1).fadeIn(500,function(){
-				$contactimages.eq(2).fadeIn(500,function(){
-					$contactimages.eq(3).fadeIn(500,function(){
+		$contactimages.eq(0).fadeIn(400,function(){
+			$contactimages.eq(1).fadeIn(400,function(){
+				$contactimages.eq(2).fadeIn(400,function(){
+					$contactimages.eq(3).fadeIn(400,function(){
 					});
 				});
 			});
