@@ -156,11 +156,11 @@ advance();
 
 var $buttons = $('buttonbot');
 $buttons.mouseenter(function(){
-	$(this).animate({'opacity': '+=0.5'}, 300, function(){
+	$(this).animate({'opacity': '+=0.2'}, 300, function(){
 	});
 });
 $buttons.mouseleave(function(){
-	$(this).animate({'opacity': '-=0.5'}, 0, function(){
+	$(this).animate({'opacity': '0.7'}, 0, function(){
 	});
 })
  

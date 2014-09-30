@@ -25,17 +25,17 @@ $(function(){
 
 	$contactimages.mouseenter(function(){
 		$(this).animate({
-			'width': '+=70%',
-			'margin-top': '+=-15%',
-			'margin-left': '+=-40%',
+			// 'width': '+=70%',
+			// 'margin-top': '+=-15%',
+			// 'margin-left': '+=-40%',
 			'opacity': '+=-0.6',
 		}, 500, function(){});
 	});
 	$contactimages.mouseleave(function(){
 		$(this).animate({
-			'width': '-=70%',
-			'margin-top': '-=-15%',
-			'margin-left': '-=-40%',
+			// 'width': '-=70%',
+			// 'margin-top': '-=-15%',
+			// 'margin-left': '-=-40%',
 			'opacity': '-=-0.6',
 		}, 500, function(){});
 	})
