@@ -1,5 +1,9 @@
+
 $(function(){
+	var $contactimages = $('.custom #contactimages li');
 	var $headeroverlay = $('.backgroundfixed');
+
 	$headeroverlay.css({'opacity': '0',});
-	$headeroverlay.animate({'opacity': '1',}, {duration: 1250, queue: false}, function(){});
+	$headeroverlay.animate({'opacity': '1',}, {duration: 1250, queue: false}, function(){
+		});
 });
