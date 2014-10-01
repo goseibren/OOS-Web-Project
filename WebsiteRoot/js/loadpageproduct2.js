@@ -75,7 +75,7 @@
 
 var $prodHeadElem = $('.backgroundfixed');
 var $prodElemListItem = $('.productimages li');
-var $prodElem = $('.productimages img');
+var $prodElem = $('.productimages #shirts img');
 var $prodElemText = $('.productimages ul p');
 var $prodBoth = $prodElem.add($prodElemText);
 
@@ -129,33 +129,74 @@ $prodElemListItem.click(function(){
         'background': 'black',
         'opacity': '0.6',
     });
-    $bodyselect.prepend('<div class="productviewer">' + $thisshirtimage[0].outerHTML + '</div>');
+    $bodyselect.prepend('<div class="productviewerwrapper"><div class="productviewer">' + $thisshirtimage[0].outerHTML + '</div><div class=productviewerdesc></div></div>');
     var $productviewer = $('.productviewer');
+    var $productviewerwrapper = $('.productviewerwrapper');
     var $shirtpviewerimage = $('.productviewer img');
-    $productviewer.css({
+    var $productviewerdesc = $('.productviewerdesc');
+
+    //css for product viewer
+    $shirtpviewerimage.css({
+        'position': 'absolute',
+        'height': '100%',
+    });
+    $productviewerwrapper.css({
         'position': 'fixed',
-        'width': '50%',
-        'padding-bottom': '35%',
+        'width': '30%',
+        'padding-bottom': '30%',
         'background': 'white',
         'z-index': '60',
         'top': '20%',
         'left': '26%',
         // 'display': 'none'
     });
-    $productviewer.css({
+    $productviewerwrapper.css({
         'top': '-100%',
     });
-    $productviewer.animate({
-            'top': '20%',
-        }, 800, function(){});
+    $productviewer.css({
+        'position': 'absolute',
+        'width': '100%',
+        'height': '100%',
+        // 'border': '2px solid red',
+        'z-index': '10',
+    });
+    $productviewerdesc.css({
+        'position': 'absolute',
+        'width': '65%',
+        'height': '100%',
+        // 'border': '2px solid blue',
+        'z-index': '5',
+        // 'left': '100%', //end of animation
+        'background': 'eef1f3',
+    });
 
+    //animation for product viewer
+    $productviewerwrapper.animate({
+            'top': '20%',
+        }, 800, function(){
+            $productviewerdesc.animate({
+                'left': '100%',
+            }, 800, function(){});
+        });
+
+    //when user clicks away from product viewer delete everything!
     $backgroundoverlay.click(function(){
-        $backgroundoverlay.remove();
-        $productviewer.animate({
-            'top': '-100%',
-        }, 300, function(){
-            $productviewer.remove();   
-        })
+        $productviewerdesc.animate({
+            'left': '0%',
+        }, 300, function(){ 
+            $backgroundoverlay.remove();
+            $productviewerwrapper.animate({
+                'top': '-100%',
+            }, 300, function(){
+                $productviewerwrapper.remove();   
+            });
+        });
+        // $backgroundoverlay.remove();
+        // $productviewerwrapper.animate({
+        //     'top': '-100%',
+        // }, 300, function(){
+        //     $productviewerwrapper.remove();   
+        // });
     });
 });
 

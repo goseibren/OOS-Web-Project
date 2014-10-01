@@ -100,12 +100,12 @@ $(function (){
 			window.location.replace("contact.html");
 		});
 
-		$customimages.eq(currentIndex).animate({
-				'width': '+=20%',
-				'margin-top': '+=-4%',
-				'margin-left': '+=-10%',
-			}, 500, function(){
-		});
+		// $customimages.eq(currentIndex).animate({
+		// 		'width': '+=20%',
+		// 		'margin-top': '+=-4%',
+		// 		'margin-left': '+=-10%',
+		// 	}, 500, function(){
+		// });
 	});
 
 	$customdivs.mouseleave(function(){
@@ -123,12 +123,13 @@ $(function (){
 		// $overlayboxtext.fadeOut(350, function(){
 		// 	$elemToRemove2.remove();
 		// });
-		$customimages.eq(currentIndex).animate({
-				'width': '-=20%',
-				'margin-top': '-=-4%',
-				'margin-left': '-=-10%',
-			}, 0, function(){				
-		});
+	
+		// $customimages.eq(currentIndex).animate({
+		// 		'width': '-=20%',
+		// 		'margin-top': '-=-4%',
+		// 		'margin-left': '-=-10%',
+		// 	}, 100, function(){				
+		// });
 	});
 
 
