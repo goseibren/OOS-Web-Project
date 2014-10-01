@@ -87,22 +87,26 @@ $prodHeadElem.animate({opacity: 1}, 1250, function(){
         'opacity': '0',
     });
     $prodElemText.css({
-        'margin-top': '-4%',
-        'top': '-4%',
+        // 'margin-top': '-4%',
+        // 'top': '-4%',
         'opacity': '0',
     });
 
 
-    $prodBoth.animate({
+    $prodElem.animate({
         'margin-top': '0%',
         'top': '0%',
-    }, {duration: 1500, queue: false}, function(){
+        'opacity': '1',
+    }, 1300, function(){
+        $prodElemText.animate({
+            'opacity': '1',
+        }, 1000, function(){});
     });
 
-    $prodBoth.animate({
-        'opacity': '1',
-    }, {duration: 2000, queue: false}, function(){
-    });
+    // $prodBoth.animate({
+    //     'opacity': '1',
+    // }, {duration: 2000, queue: false}, function(){
+    // });
 
 });
 
@@ -115,12 +119,15 @@ $prodElemListItem.mouseleave(function(){
 });
 
 $prodElemListItem.click(function(){
+    //variables
     var $bodyselect = $('body');
     $bodyselect.prepend('<div class="backgroundoverlay"></div>');
     var $backgroundoverlay = $('.backgroundoverlay');
     var $this = $(this);
     var $thisshirtimage = $this.find('img');
-    console.log($thisshirtimage[0].outerHTML);
+    var $productname = $this.find('.product-name');
+    var $productprice = $this.find('.product-cost');
+
     $backgroundoverlay.css({
         'position': 'fixed',
         'width': '100%',
@@ -129,11 +136,15 @@ $prodElemListItem.click(function(){
         'background': 'black',
         'opacity': '0.6',
     });
-    $bodyselect.prepend('<div class="productviewerwrapper"><div class="productviewer">' + $thisshirtimage[0].outerHTML + '</div><div class=productviewerdesc></div></div>');
+
+    $bodyselect.prepend('<div class="productviewerwrapper"><div class="productviewer">' + $thisshirtimage[0].outerHTML + '</div><div class=productviewerdesc><p class="product-name-pv">' + $productname.text() + '</p><p class="product-cost-pv">' + $productprice.text() + '</p></div></div>');
+
     var $productviewer = $('.productviewer');
     var $productviewerwrapper = $('.productviewerwrapper');
     var $shirtpviewerimage = $('.productviewer img');
     var $productviewerdesc = $('.productviewerdesc');
+    var $productnamepv = $('.product-name-pv');
+    var $productcostpv = $('.product-cost-pv');
 
     //css for product viewer
     $shirtpviewerimage.css({
@@ -168,6 +179,19 @@ $prodElemListItem.click(function(){
         'z-index': '5',
         // 'left': '100%', //end of animation
         'background': 'eef1f3',
+        'overflow': 'hidden',
+    });
+    $productnamepv.css({
+        'position': 'relative',
+        'width': '100%',
+        'text-align': 'center',
+        'font-size':'25px',
+        'margin-top': '10%'
+    });
+    $productcostpv.css({
+        'width': '100%',
+        'text-align': 'center',
+        'font-size': '15px',
     });
 
     //animation for product viewer
