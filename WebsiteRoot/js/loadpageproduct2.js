@@ -127,6 +127,8 @@ $prodElemListItem.click(function(){
     var $thisshirtimage = $this.find('img');
     var $productname = $this.find('.product-name');
     var $productprice = $this.find('.product-cost');
+    var $productsizes = $this.find('.item-sizes');
+    var $productcolors = $this.find('.item-colors');
 
     $backgroundoverlay.css({
         'position': 'fixed',
@@ -145,6 +147,14 @@ $prodElemListItem.click(function(){
     var $productviewerdesc = $('.productviewerdesc');
     var $productnamepv = $('.product-name-pv');
     var $productcostpv = $('.product-cost-pv');
+
+    $productviewerdesc.append('<select class="item-sizes-pv">' + $productsizes.html() + '</select>');
+    $productviewerdesc.append('<select class="item-colors-pv">' + $productcolors.html() + '</select>');
+    // $productviewerdesc.append('<select class="item-sizes"><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>');
+    // $productviewerdesc.append('<select class="item-colors"><option>Blue</option><option>Red</option><option>Black</option><option>White</option><option>Grey</option></select>');
+    
+    var $productsizespv = $productviewerdesc.find('.item-sizes-pv');
+    var $productcolorspv = $productviewerdesc.find('.item-colors-pv');
 
     //css for product viewer
     $shirtpviewerimage.css({
@@ -186,13 +196,22 @@ $prodElemListItem.click(function(){
         'width': '100%',
         'text-align': 'center',
         'font-size':'25px',
-        'margin-top': '10%'
+        'margin-top': '15%'
     });
     $productcostpv.css({
         'width': '100%',
         'text-align': 'center',
-        'font-size': '15px',
+        'font-size': '20px',
     });
+    $productsizespv.css({
+        'width': '30%',
+        'margin-left': '20%',
+        'margin-top': '15%',
+    });
+    $productcolorspv.css({
+        'width': '30%',
+    });
+
 
     //animation for product viewer
     $productviewerwrapper.animate({

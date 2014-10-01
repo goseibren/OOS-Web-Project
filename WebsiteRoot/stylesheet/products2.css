@@ -263,6 +263,10 @@ li a:hover {
   color: black;
 }
 
+.productimages ul select{
+  display: none;
+}
+
 /*---------------------------*/
 /*---------SIDENAV-----------*/
 /*---------------------------*/
