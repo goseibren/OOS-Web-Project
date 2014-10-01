@@ -118,6 +118,9 @@ $prodElemListItem.click(function(){
     var $bodyselect = $('body');
     $bodyselect.prepend('<div class="backgroundoverlay"></div>');
     var $backgroundoverlay = $('.backgroundoverlay');
+    var $this = $(this);
+    var $thisshirtimage = $this.find('img');
+    console.log($thisshirtimage[0].outerHTML);
     $backgroundoverlay.css({
         'position': 'fixed',
         'width': '100%',
@@ -126,9 +129,9 @@ $prodElemListItem.click(function(){
         'background': 'black',
         'opacity': '0.6',
     });
-
-    $bodyselect.prepend('<div class="productviewer"></div>');
+    $bodyselect.prepend('<div class="productviewer">' + $thisshirtimage[0].outerHTML + '</div>');
     var $productviewer = $('.productviewer');
+    var $shirtpviewerimage = $('.productviewer img');
     $productviewer.css({
         'position': 'fixed',
         'width': '50%',
