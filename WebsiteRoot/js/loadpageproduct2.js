@@ -132,16 +132,27 @@ $prodElemListItem.click(function(){
     $productviewer.css({
         'position': 'fixed',
         'width': '50%',
-        'padding-bottom': '45%',
+        'padding-bottom': '35%',
         'background': 'white',
         'z-index': '60',
-        'top': '10%',
-        'left': '25%',
+        'top': '20%',
+        'left': '26%',
+        // 'display': 'none'
     });
+    $productviewer.css({
+        'top': '-100%',
+    });
+    $productviewer.animate({
+            'top': '20%',
+        }, 800, function(){});
 
-     $backgroundoverlay.click(function(){
+    $backgroundoverlay.click(function(){
         $backgroundoverlay.remove();
-        $productviewer.remove();
+        $productviewer.animate({
+            'top': '-100%',
+        }, 300, function(){
+            $productviewer.remove();   
+        })
     });
 });
 
