@@ -114,3 +114,35 @@ $prodElemListItem.mouseleave(function(){
     $(this).animate({'opacity': '-=-0.5',}, 0, function(){});
 });
 
+$prodElemListItem.click(function(){
+    var $bodyselect = $('body');
+    $bodyselect.prepend('<div class="backgroundoverlay"></div>');
+    var $backgroundoverlay = $('.backgroundoverlay');
+    $backgroundoverlay.css({
+        'position': 'fixed',
+        'width': '100%',
+        'height': '100%',
+        'z-index': '50',
+        'background': 'black',
+        'opacity': '0.6',
+    });
+
+    $bodyselect.prepend('<div class="productviewer"></div>');
+    var $productviewer = $('.productviewer');
+    $productviewer.css({
+        'position': 'fixed',
+        'width': '50%',
+        'padding-bottom': '45%',
+        'background': 'white',
+        'z-index': '60',
+        'top': '10%',
+        'left': '25%',
+    });
+
+     $backgroundoverlay.click(function(){
+        $backgroundoverlay.remove();
+        $productviewer.remove();
+    });
+});
+
+

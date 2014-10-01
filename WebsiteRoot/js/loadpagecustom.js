@@ -72,7 +72,7 @@ $(function (){
 
 
 
-		$overlayservicebox.animate({'opacity': '0.85'}, 1000, function(){
+		$overlayservicebox.animate({'opacity': '0.85'}, 700, function(){
 			$overlayboxtext.fadeIn(500, function(){
 			});
 			$contactbutton.fadeIn(500, function(){
@@ -101,10 +101,10 @@ $(function (){
 		});
 
 		$customimages.eq(currentIndex).animate({
-				'width': '+=40%',
-				'margin-top': '+=-8%',
-				'margin-left': '+=-20%',
-			}, 800, function(){
+				'width': '+=20%',
+				'margin-top': '+=-4%',
+				'margin-left': '+=-10%',
+			}, 500, function(){
 		});
 	});
 
@@ -124,9 +124,9 @@ $(function (){
 		// 	$elemToRemove2.remove();
 		// });
 		$customimages.eq(currentIndex).animate({
-				'width': '-=40%',
-				'margin-top': '-=-8%',
-				'margin-left': '-=-20%',
+				'width': '-=20%',
+				'margin-top': '-=-4%',
+				'margin-left': '-=-10%',
 			}, 0, function(){				
 		});
 	});
