@@ -139,10 +139,11 @@ $prodElemListItem.click(function(){
         'opacity': '0.6',
     });
 
-    $bodyselect.prepend('<div class="productviewerwrapper"><div class="productviewer">' + $thisshirtimage[0].outerHTML + '</div><div class=productviewerdesc><p class="product-name-pv">' + $productname.text() + '</p><p class="product-cost-pv">' + $productprice.text() + '</p></div></div>');
+    $bodyselect.prepend('<div class="productviewerwrapper"><img src="images/exit.svg" class="exitimg"></img><div class="productviewer">' + $thisshirtimage[0].outerHTML + '</div><div class=productviewerdesc><p class="product-name-pv">' + $productname.text() + '</p><p class="product-cost-pv">' + $productprice.text() + '</p></div></div>');
 
     var $productviewer = $('.productviewer');
     var $productviewerwrapper = $('.productviewerwrapper');
+    var $exitimage = $productviewerwrapper.find('.exitimg');
     var $shirtpviewerimage = $('.productviewer img');
     var $productviewerdesc = $('.productviewerdesc');
     var $productnamepv = $('.product-name-pv');
@@ -150,9 +151,11 @@ $prodElemListItem.click(function(){
 
     $productviewerdesc.append('<select class="item-sizes-pv">' + $productsizes.html() + '</select>');
     $productviewerdesc.append('<select class="item-colors-pv">' + $productcolors.html() + '</select>');
+    $productviewerdesc.append('<img src="images/addtocart.png" class="addtocartbutton"></img>');
     // $productviewerdesc.append('<select class="item-sizes"><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>');
     // $productviewerdesc.append('<select class="item-colors"><option>Blue</option><option>Red</option><option>Black</option><option>White</option><option>Grey</option></select>');
     
+    var $addtocart = $productviewerdesc.find('.addtocartbutton');
     var $productsizespv = $productviewerdesc.find('.item-sizes-pv');
     var $productcolorspv = $productviewerdesc.find('.item-colors-pv');
 
@@ -160,6 +163,12 @@ $prodElemListItem.click(function(){
     $shirtpviewerimage.css({
         'position': 'absolute',
         'height': '100%',
+        'z-index': '5',
+    });
+    $exitimage.css({
+        'position': 'absolute',
+        'z-index': '100',
+        'width': '6%',
     });
     $productviewerwrapper.css({
         'position': 'fixed',
@@ -211,7 +220,25 @@ $prodElemListItem.click(function(){
     $productcolorspv.css({
         'width': '30%',
     });
+    $addtocart.css({
+        'width': '40%',
+        'margin-left': '30%',
+        'margin-top': '15%',
+    });
 
+    //on exitimage addto cart hover
+    $exitimage.mouseenter(function(){
+        $exitimage.attr("src", "images/exithover.svg");
+    });
+    $exitimage.mouseleave(function(){
+        $exitimage.attr("src", "images/exit.svg");
+    });
+    $addtocart.mouseenter(function(){
+        $addtocart.attr("src", "images/addtocarthover.png");
+    });
+    $addtocart.mouseleave(function(){
+        $addtocart.attr("src", "images/addtocart.png");
+    });
 
     //animation for product viewer
     $productviewerwrapper.animate({
@@ -223,7 +250,7 @@ $prodElemListItem.click(function(){
         });
 
     //when user clicks away from product viewer delete everything!
-    $backgroundoverlay.click(function(){
+    function deleteprodviewer(){
         $productviewerdesc.animate({
             'left': '0%',
         }, 300, function(){ 
@@ -234,12 +261,43 @@ $prodElemListItem.click(function(){
                 $productviewerwrapper.remove();   
             });
         });
+    }
+
+    $backgroundoverlay.click(function(){
+        deleteprodviewer();
+
+        // $productviewerdesc.animate({
+        //     'left': '0%',
+        // }, 300, function(){ 
+        //     $backgroundoverlay.remove();
+        //     $productviewerwrapper.animate({
+        //         'top': '-100%',
+        //     }, 300, function(){
+        //         $productviewerwrapper.remove();   
+        //     });
+        // });
+
+
         // $backgroundoverlay.remove();
         // $productviewerwrapper.animate({
         //     'top': '-100%',
         // }, 300, function(){
         //     $productviewerwrapper.remove();   
         // });
+    });
+    $exitimage.click(function(){
+        deleteprodviewer();
+        // $productviewerdesc.animate({
+        //     'left': '0%',
+        // }, 300, function(){ 
+        //     $backgroundoverlay.remove();
+        //     $productviewerwrapper.animate({
+        //         'top': '-100%',
+        //     }, 300, function(){
+        //         $productviewerwrapper.remove();   
+        //     });
+        // });
+
     });
 });
 
