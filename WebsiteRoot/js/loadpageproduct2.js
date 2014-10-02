@@ -75,7 +75,7 @@
 
 var $prodHeadElem = $('.backgroundfixed');
 var $prodElemListItem = $('.productimages li');
-var $prodElem = $('.productimages #shirts img');
+var $prodElem = $('.productimages ul img');
 var $prodElemText = $('.productimages ul p');
 var $prodBoth = $prodElem.add($prodElemText);
 
@@ -125,6 +125,7 @@ $prodElemListItem.click(function(){
     var $backgroundoverlay = $('.backgroundoverlay');
     var $this = $(this);
     var $thisshirtimage = $this.find('img');
+    var $thisshirtimagesrc =  $thisshirtimage.attr("src");
     var $productname = $this.find('.product-name');
     var $productprice = $this.find('.product-cost');
     var $productsizes = $this.find('.item-sizes');
@@ -139,7 +140,7 @@ $prodElemListItem.click(function(){
         'opacity': '0.6',
     });
 
-    $bodyselect.prepend('<div class="productviewerwrapper"><img src="images/exit.svg" class="exitimg"></img><div class="productviewer">' + $thisshirtimage[0].outerHTML + '</div><div class=productviewerdesc><p class="product-name-pv">' + $productname.text() + '</p><p class="product-cost-pv">' + $productprice.text() + '</p></div></div>');
+    $bodyselect.prepend('<div class="productviewerwrapper"><img src="images/exit.svg" class="exitimg"></img><div class="productviewer"><img src="' + $thisshirtimagesrc + '"></img></div><div class=productviewerdesc><p class="product-name-pv">' + $productname.text() + '</p><p class="product-cost-pv">' + $productprice.text() + '</p></div></div>');
 
     var $productviewer = $('.productviewer');
     var $productviewerwrapper = $('.productviewerwrapper');
@@ -198,7 +199,7 @@ $prodElemListItem.click(function(){
         'z-index': '5',
         // 'left': '100%', //end of animation
         'background': 'eef1f3',
-        'overflow': 'hidden',
+        'overflow': 'scroll',
     });
     $productnamepv.css({
         'position': 'relative',
@@ -265,39 +266,9 @@ $prodElemListItem.click(function(){
 
     $backgroundoverlay.click(function(){
         deleteprodviewer();
-
-        // $productviewerdesc.animate({
-        //     'left': '0%',
-        // }, 300, function(){ 
-        //     $backgroundoverlay.remove();
-        //     $productviewerwrapper.animate({
-        //         'top': '-100%',
-        //     }, 300, function(){
-        //         $productviewerwrapper.remove();   
-        //     });
-        // });
-
-
-        // $backgroundoverlay.remove();
-        // $productviewerwrapper.animate({
-        //     'top': '-100%',
-        // }, 300, function(){
-        //     $productviewerwrapper.remove();   
-        // });
     });
     $exitimage.click(function(){
         deleteprodviewer();
-        // $productviewerdesc.animate({
-        //     'left': '0%',
-        // }, 300, function(){ 
-        //     $backgroundoverlay.remove();
-        //     $productviewerwrapper.animate({
-        //         'top': '-100%',
-        //     }, 300, function(){
-        //         $productviewerwrapper.remove();   
-        //     });
-        // });
-
     });
 });
 
