@@ -165,6 +165,7 @@ $prodElemListItem.click(function(){
         'position': 'absolute',
         'height': '100%',
         'z-index': '5',
+        'border-right': '1px solid black',
     });
     $exitimage.css({
         'position': 'absolute',
