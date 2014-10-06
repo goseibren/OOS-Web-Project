@@ -128,8 +128,6 @@ $prodElemListItem.click(function(){
     var $thisshirtimagesrc =  $thisshirtimage.attr("src");
     var $productname = $this.find('.product-name');
     var $productprice = $this.find('.product-cost');
-    var $productsizes = $this.find('.item-sizes');
-    var $productcolors = $this.find('.item-colors');
 
     $backgroundoverlay.css({
         'position': 'fixed',
@@ -140,7 +138,7 @@ $prodElemListItem.click(function(){
         'opacity': '0.6',
     });
 
-    $bodyselect.prepend('<div class="productviewerwrapper"><img src="images/exit.svg" class="exitimg"></img><div class="productviewer"><img src="' + $thisshirtimagesrc + '"></img></div><div class=productviewerdesc><p class="product-name-pv">' + $productname.text() + '</p><p class="product-cost-pv">' + $productprice.text() + '</p></div></div>');
+    $bodyselect.prepend('<div class="productviewerwrapper"><img src="images/exit.svg" class="exitimg"></img><div class="productviewer"><img src="' + $thisshirtimagesrc + '"></img></div><div class=productviewerdesc><p class="product-name-pv">' + $productname.text() + '</p><p class="product-cost-pv"></div></div>');
 
     var $productviewer = $('.productviewer');
     var $productviewerwrapper = $('.productviewerwrapper');
@@ -150,17 +148,26 @@ $prodElemListItem.click(function(){
     var $productnamepv = $('.product-name-pv');
     var $productcostpv = $('.product-cost-pv');
 
-    $productviewerdesc.append('<select class="item-sizes-pv">' + $productsizes.html() + '</select>');
-    $productviewerdesc.append('<select class="item-colors-pv">' + $productcolors.html() + '</select>');
-    $productviewerdesc.append('<img src="images/addtocart.png" class="addtocartbutton"></img>');
-    // $productviewerdesc.append('<select class="item-sizes"><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>');
-    // $productviewerdesc.append('<select class="item-colors"><option>Blue</option><option>Red</option><option>Black</option><option>White</option><option>Grey</option></select>');
+    // old way without paypal.
+    // $productviewerdesc.append('<select class="item-sizes-pv">' + $productsizes.html() + '</select>');
+    // $productviewerdesc.append('<select class="item-colors-pv">' + $productcolors.html() + '</select>');
+    // $productviewerdesc.append('<img src="images/addtocart.png" class="addtocartbutton"></img>');
+
+    //paypal html insert.
+    var $paypalform = $this.find('form');
+    $productviewerdesc.append($paypalform[0].outerHTML);
+    console.log($paypalform[0].outerHTML);
     
-    var $addtocart = $productviewerdesc.find('.addtocartbutton');
-    var $productsizespv = $productviewerdesc.find('.item-sizes-pv');
-    var $productcolorspv = $productviewerdesc.find('.item-colors-pv');
+    var $addtocart = $productviewerdesc.find('input[name=submit]');
+    var $productsizespv = $productviewerdesc.find('.item-sizes');
+    var $productcolorspv = $productviewerdesc.find('.item-colors');
+    var $paypalformpv = $productviewerdesc.find('form');
 
     //css for product viewer
+    $paypalformpv.css({
+        'margin-top': '10%',
+        'width': '95%',
+    });
     $shirtpviewerimage.css({
         'position': 'absolute',
         'height': '100%',
@@ -225,7 +232,7 @@ $prodElemListItem.click(function(){
     $addtocart.css({
         'width': '40%',
         'margin-left': '30%',
-        'margin-top': '15%',
+        'margin-top': '10%',
     });
 
     //on exitimage addto cart hover
@@ -272,6 +279,9 @@ $prodElemListItem.click(function(){
         deleteprodviewer();
     });
 });
+
+
+
 
 
 

@@ -266,6 +266,9 @@ li a:hover {
 .productimages ul select{
   display: none;
 }
+.productimages ul form{
+  display: none;
+}
 
 /*---------------------------*/
 /*---------SIDENAV-----------*/
