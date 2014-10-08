@@ -162,7 +162,7 @@ $prodElemListItem.click(function(){
     // var $productsizespv = $productviewerdesc.find('.item-sizes');
     // var $productcolorspv = $productviewerdesc.find('.item-colors');
     var $paypalformpv = $productviewerdesc.find('form');
-    var $forminputs = $productviewerdesc.find('input');
+    var $forminputs = $productviewerdesc.find('table');
     var $formselects = $productviewerdesc.find('select');
 
     //css for product viewer
@@ -238,10 +238,11 @@ $prodElemListItem.click(function(){
     });
     //form input and select css
     $forminputs.css({
-        'text-align': 'center',
+        // 'border': '2px solid red',
+        'margin-left': '5%',
     });
     $formselects.css({
-        'margin-left': '30%',
+        // 'margin-left': '30%',
     });
 
     //on exitimage addto cart hover

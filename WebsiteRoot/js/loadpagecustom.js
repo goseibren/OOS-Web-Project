@@ -137,13 +137,13 @@ $(function (){
    				'margin': 'auto',
    				'margin': 'auto',
    				'width': '70%',
-   				'height': '75%',
+   				'padding-bottom': '5%',
    			});
    			$formviewerinside.find('p').css({
    				'text-align': 'center',
    				'font-size': '27px',
    				'margin-top': '5%',
-   				'margin-bottom': '5%',
+   				'margin-bottom': '20px',
    			});
    			$formviewer.find('form input').css({
    				'width': '100%',
@@ -187,7 +187,7 @@ $(function (){
    				$formviewer.find('img').attr("src","images/exit.svg" );
    			});
 
-   			
+
    			//exit the viewer
    			$backgroundoverlay.click(function(){
    				deleteformviewer();
