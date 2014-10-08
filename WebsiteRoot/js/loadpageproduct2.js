@@ -179,7 +179,7 @@ $prodElemListItem.click(function(){
     $exitimage.css({
         'position': 'absolute',
         'z-index': '100',
-        'width': '6%',
+        'width': '4%',
     });
     $productviewerwrapper.css({
         'position': 'fixed',
@@ -233,7 +233,7 @@ $prodElemListItem.click(function(){
     // });
     $addtocart.css({
         'width': '40%',
-        'margin-left': '30%',
+        'margin-left': '32%',
         'margin-top': '10%',
     });
     //form input and select css

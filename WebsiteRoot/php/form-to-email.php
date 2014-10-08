@@ -13,6 +13,7 @@ $details = $_POST['details'];
 if(empty($firstname)||empty($lastname)||empty($emailaddress)){
 	echo "Name and Email are mandatory!";
 }
+else{
 
 $email_from = "byamaguchi92@gmail.com";
 $email_subject = $servicetype + " - OOS Web Contact Form";
@@ -25,4 +26,5 @@ $headers = "From: $email_from \r\n";
 mail($to, $email_subject, $email_body, $headers);
 //done, redirect to thank you page
 echo "your message has been sent";
+}
 ?>

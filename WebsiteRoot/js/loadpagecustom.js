@@ -96,7 +96,110 @@ $(function (){
 			});
 		});
 		$contactbutton.click(function(){
-			window.location.replace("contact.html");
+			//window.location.replace("contact.html");
+			//instead of opening new window. popup window.
+			var $formselect = $('body form');
+			$('body').append('<div class="background-overlay"></div><div class="form-viewer" ><img src="images/exit.svg"></img><div class="form-viewer-inside"><p>Contact Form</p>' + $formselect[0].outerHTML + '</div></div>');
+			var $formviewer = $('.form-viewer');
+			var $backgroundoverlay = $('body .background-overlay');
+			var $formselectviewer = $formviewer.find('form');
+			var $formviewerinside = $('.form-viewer-inside');
+
+			$backgroundoverlay.css({
+		        'position': 'fixed',
+		        'width': '100%',
+		        'height': '100%',
+		        'z-index': '50',
+		        'background': 'black',
+		        'opacity': '0.6',
+   			});
+   			$formviewer.css({
+   				'position': 'fixed',
+		        'width': '25%',
+		        'background': 'white',
+		        'z-index': '60',
+		        'top': '20%',
+		        'left': '40%',
+		        'opacity': '1',
+		        'padding-bottom': '30%',
+		    });
+		    $formviewerinside.css({
+		    	'position': 'absolute',
+		    	'width': '100%',
+		    	'height': '100%',
+		    	'overflow': 'scroll',
+		    	'z-index': '60',
+		    });
+        // 'display': 'n
+   			$formselectviewer.css({
+   				'position': 'relative',
+   				'display': 'block',
+   				'margin': 'auto',
+   				'margin': 'auto',
+   				'width': '70%',
+   				'height': '75%',
+   			});
+   			$formviewerinside.find('p').css({
+   				'text-align': 'center',
+   				'font-size': '27px',
+   				'margin-top': '5%',
+   				'margin-bottom': '5%',
+   			});
+   			$formviewer.find('form input').css({
+   				'width': '100%',
+   				'padding': '5px',
+   				'font-size': '15px',
+   			});
+   			$formviewer.find('form select').css({
+
+   				'width': '100%',
+   				'font-size': '15px',
+   			});
+   			$formviewer.find('form textarea').css({
+   				'width': '100%',
+   				'height': '30%',
+   				'padding': '6px',
+   				'font-size': '13px',
+   			});
+   			$formviewer.find('form button').css({
+   				'width': '50%',
+   				'height': '9%',
+   				'padding': '5px',
+   				'font-size': '13px',
+   				'display': 'block',
+   				'margin': 'auto',
+   			});
+   			$formviewer.find('img').css({
+   				'position':'absolute',
+   				'top': '0',
+   				'left': '0',
+   				'width': '5%',
+   				'z-index': '65',
+   			});
+
+
+
+   			//when mouse hovers and leaves exit symbol
+   			$formviewer.find('img').mouseenter(function(){
+   				$formviewer.find('img').attr("src","images/exithover.svg" );
+   			});
+   			$formviewer.find('img').mouseleave(function(){
+   				$formviewer.find('img').attr("src","images/exit.svg" );
+   			});
+
+   			
+   			//exit the viewer
+   			$backgroundoverlay.click(function(){
+   				deleteformviewer();
+   			});
+   			$formviewer.find('img').click(function(){
+   				deleteformviewer();
+   				
+   			});
+   			function deleteformviewer(){
+   				$backgroundoverlay.remove();
+   				$formviewer.remove();
+   			}
 		});
 
 		// $customimages.eq(currentIndex).animate({
