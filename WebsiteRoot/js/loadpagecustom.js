@@ -99,7 +99,7 @@ $(function (){
 			//window.location.replace("contact.html");
 			//instead of opening new window. popup window.
 			var $formselect = $('body form');
-			$('body').append('<div class="background-overlay"></div><div class="form-viewer" ><img src="images/exit.svg"></img><div class="form-viewer-inside"><p>Contact Form</p>' + $formselect[0].outerHTML + '</div></div>');
+			$('body').append('<div class="background-overlay"></div><div class="form-viewer" ><img src="images/exit.svg"></img><div class="form-viewer-inside"><p>OOS Contact Form</p>' + $formselect[0].outerHTML + '</div></div>');
 			var $formviewer = $('.form-viewer');
 			var $backgroundoverlay = $('body .background-overlay');
 			var $formselectviewer = $formviewer.find('form');
@@ -111,7 +111,7 @@ $(function (){
 		        'height': '100%',
 		        'z-index': '50',
 		        'background': 'black',
-		        'opacity': '0.6',
+		        'opacity': '0.6', 
    			});
    			$formviewer.css({
    				'position': 'fixed',
@@ -122,6 +122,7 @@ $(function (){
 		        'left': '40%',
 		        'opacity': '1',
 		        'padding-bottom': '30%',
+		        'display': 'none',
 		    });
 		    $formviewerinside.css({
 		    	'position': 'absolute',
@@ -130,7 +131,6 @@ $(function (){
 		    	'overflow': 'scroll',
 		    	'z-index': '60',
 		    });
-        // 'display': 'n
    			$formselectviewer.css({
    				'position': 'relative',
    				'display': 'block',
@@ -177,6 +177,8 @@ $(function (){
    				'z-index': '65',
    			});
 
+   			//to make the default selection to the one the user clicks on.
+   			$formviewer.find('select option').eq(currentIndex).attr("selected", "selected"); //wow jquery is amazing..
 
 
    			//when mouse hovers and leaves exit symbol
@@ -197,17 +199,16 @@ $(function (){
    				
    			});
    			function deleteformviewer(){
-   				$backgroundoverlay.remove();
-   				$formviewer.remove();
-   			}
-		});
+   				$formviewer.fadeOut(500,function(){
+   					$backgroundoverlay.remove();
+   					$formviewer.remove();
+   				});
 
-		// $customimages.eq(currentIndex).animate({
-		// 		'width': '+=20%',
-		// 		'margin-top': '+=-4%',
-		// 		'margin-left': '+=-10%',
-		// 	}, 500, function(){
-		// });
+   			}
+
+   			//ANIMATIONS
+   			$formviewer.fadeIn(1000, function(){});
+		});
 	});
 
 	$customdivs.mouseleave(function(){
