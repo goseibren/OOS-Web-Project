@@ -71,21 +71,22 @@
 				<p class="contact-text2">We'd love to hear from you.</p>
 			</div>
 			<ul id="customimages">
-				<form>
-					<input type="text" placeholder="First Name"></input><br>
-					<input type="text" placeholder="Last Name"></input><br>
-					<input type="text" placeholder="Email Address"></input><br>
-					<input type="text" placeholder="Phone Number"></input><br>
+				<!-- HTML Form for contacting OOS -->
+				<form method="post" name="myemailform" action="php/form-to-email.php">
+					<input type="text" name="firstname" placeholder="First Name"></input><br>
+					<input type="text" name="lastname" placeholder="Last Name"></input><br>
+					<input type="text" name="emailaddress" placeholder="Email Address"></input><br>
+					<input type="text" name="phonenumber" placeholder="Phone Number"></input><br>
 					<br>
-					<select class="form-control">
+					<select class="form-control" name="servicetype">
 					  <option>Silk Screening</option>
 					  <option>Heat Transfers</option>
 					  <option>Stickers/Decals</option>
 					  <option>Other</option>
 					</select><br><br>
-					<textarea type="text" rows="3" placeholder="More Details"></textarea><br><br>
-					<button type="submit" class="btn">Submit</button>
-				</form>		
+					<textarea type="text" name="details" rows="3" placeholder="More Details"></textarea><br><br>
+					<button type="submit" class="btn" name="submit">Submit</button>
+				</form>	
 			</ul>
 		</div>
 		<script src="js/jquery-1.11.1.min.js"></script>

@@ -159,9 +159,11 @@ $prodElemListItem.click(function(){
     console.log($paypalform[0].outerHTML);
     
     var $addtocart = $productviewerdesc.find('input[name=submit]');
-    var $productsizespv = $productviewerdesc.find('.item-sizes');
-    var $productcolorspv = $productviewerdesc.find('.item-colors');
+    // var $productsizespv = $productviewerdesc.find('.item-sizes');
+    // var $productcolorspv = $productviewerdesc.find('.item-colors');
     var $paypalformpv = $productviewerdesc.find('form');
+    var $forminputs = $productviewerdesc.find('input');
+    var $formselects = $productviewerdesc.find('select');
 
     //css for product viewer
     $paypalformpv.css({
@@ -216,23 +218,30 @@ $prodElemListItem.click(function(){
         'font-size':'25px',
         'margin-top': '15%'
     });
-    $productcostpv.css({
-        'width': '100%',
-        'text-align': 'center',
-        'font-size': '20px',
-    });
-    $productsizespv.css({
-        'width': '30%',
-        'margin-left': '20%',
-        'margin-top': '15%',
-    });
-    $productcolorspv.css({
-        'width': '30%',
-    });
+    // $productcostpv.css({
+    //     'width': '100%',
+    //     'text-align': 'center',
+    //     'font-size': '20px',
+    // });
+    // $productsizespv.css({
+    //     'width': '30%',
+    //     'margin-left': '20%',
+    //     'margin-top': '15%',
+    // });
+    // $productcolorspv.css({
+    //     'width': '30%',
+    // });
     $addtocart.css({
         'width': '40%',
         'margin-left': '30%',
         'margin-top': '10%',
+    });
+    //form input and select css
+    $forminputs.css({
+        'text-align': 'center',
+    });
+    $formselects.css({
+        'margin-left': '30%',
     });
 
     //on exitimage addto cart hover
