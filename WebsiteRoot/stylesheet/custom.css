@@ -312,11 +312,6 @@ body .custom form {
   display: none;
 }
 
-body .background-overlay form input{
-  display: block;
-  margin: auto;
-}
-
 /*---------------------------*/
 /*---------SIDENAV-----------*/
 /*---------------------------*/

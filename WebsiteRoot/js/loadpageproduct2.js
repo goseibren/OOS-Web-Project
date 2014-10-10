@@ -197,7 +197,7 @@ $prodElemListItem.click(function(){
     $productviewer.css({
         'position': 'absolute',
         'width': '100%',
-        'height': '100%',
+        'height': '100%',y
         // 'border': '2px solid red',
         'z-index': '10',
     });
