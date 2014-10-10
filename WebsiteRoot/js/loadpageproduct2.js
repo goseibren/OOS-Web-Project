@@ -159,8 +159,8 @@ $prodElemListItem.click(function(){
     console.log($paypalform[0].outerHTML);
     
     var $addtocart = $productviewerdesc.find('input[name=submit]');
-    // var $productsizespv = $productviewerdesc.find('.item-sizes');
-    // var $productcolorspv = $productviewerdesc.find('.item-colors');
+    var $productsizespv = $productviewerdesc.find('.item-sizes');
+    var $productcolorspv = $productviewerdesc.find('.item-colors');
     var $paypalformpv = $productviewerdesc.find('form');
     var $forminputs = $productviewerdesc.find('table');
     var $formselects = $productviewerdesc.find('select');
@@ -197,7 +197,7 @@ $prodElemListItem.click(function(){
     $productviewer.css({
         'position': 'absolute',
         'width': '100%',
-        'height': '100%',y
+        'height': '100%',
         // 'border': '2px solid red',
         'z-index': '10',
     });
@@ -208,7 +208,7 @@ $prodElemListItem.click(function(){
         // 'border': '2px solid blue',
         'z-index': '5',
         // 'left': '100%', //end of animation
-        'background': 'eef1f3',
+        'background': 'white',
         'overflow': 'scroll',
     });
     $productnamepv.css({
@@ -218,19 +218,19 @@ $prodElemListItem.click(function(){
         'font-size':'25px',
         'margin-top': '15%'
     });
-    // $productcostpv.css({
-    //     'width': '100%',
-    //     'text-align': 'center',
-    //     'font-size': '20px',
-    // });
-    // $productsizespv.css({
-    //     'width': '30%',
-    //     'margin-left': '20%',
-    //     'margin-top': '15%',
-    // });
-    // $productcolorspv.css({
-    //     'width': '30%',
-    // });
+    $productcostpv.css({
+        'width': '100%',
+        'text-align': 'center',
+        'font-size': '20px',
+    });
+    $productsizespv.css({
+        'width': '30%',
+        'margin-left': '20%',
+        'margin-top': '15%',
+    });
+    $productcolorspv.css({
+        'width': '30%',
+    });
     $addtocart.css({
         'width': '40%',
         'margin-left': '32%',
