@@ -6,6 +6,7 @@ var slideGroup = document.querySelector('.slide-group');
 var slides = document.getElementsByClassName('slide');
 var slidebuttons = document.getElementById("slide-buttons");
 var arrowbuttons = document.getElementById("arrow-buttons");
+var $slides = $('.slide');
 //var leftBtnArray = [];
 //var rightBtnArray = [];
 var botBtnArray =[];
@@ -56,7 +57,12 @@ function move(newIndex){
 	}
 	// slides[newIndex].style.left = slideLeft;
 	// slides[newIndex].style.display = 'block';
-	slideAnimate(slideGroup, "left", "%", currIndex*-100, newIndex*-100, 350);
+	// slideAnimate(slideGroup, "left", "%", currIndex*-100, newIndex*-100, 350);
+	// slideAnimate(slides[currIndex], "opacity", "", 1, 0, 350);
+	// slideAnimate(slides[newIndex], "opacity", "", 0, 1, 350);
+ 	$slides.eq(currIndex).fadeOut(400, function(){
+ 		$slides.eq(newIndex).fadeIn(600, function(){});
+ 	});
 	// slides[currIndex].style.display = 'none';
 	// slides[newIndex].style.left = '0';
 
@@ -153,6 +159,10 @@ for(index = 0; index < slides.length; index++){
 }
 
 advance();
+
+$slides.nextAll(0).css({
+	'display': 'none',
+});
 
 var $buttons = $('buttonbot');
 $buttons.mouseenter(function(){
