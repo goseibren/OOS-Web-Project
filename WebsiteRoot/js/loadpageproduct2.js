@@ -87,8 +87,6 @@ $prodHeadElem.animate({opacity: 1}, 1250, function(){
         'opacity': '0',
     });
     $prodElemText.css({
-        // 'margin-top': '-4%',
-        // 'top': '-4%',
         'opacity': '0',
     });
 
@@ -102,12 +100,6 @@ $prodHeadElem.animate({opacity: 1}, 1250, function(){
             'opacity': '1',
         }, 1000, function(){});
     });
-
-    // $prodBoth.animate({
-    //     'opacity': '1',
-    // }, {duration: 2000, queue: false}, function(){
-    // });
-
 });
 
 $prodElemListItem.mouseenter(function(){
@@ -147,11 +139,6 @@ $prodElemListItem.click(function(){
     var $productviewerdesc = $('.productviewerdesc');
     var $productnamepv = $('.product-name-pv');
     var $productcostpv = $('.product-cost-pv');
-
-    // old way without paypal.
-    // $productviewerdesc.append('<select class="item-sizes-pv">' + $productsizes.html() + '</select>');
-    // $productviewerdesc.append('<select class="item-colors-pv">' + $productcolors.html() + '</select>');
-    // $productviewerdesc.append('<img src="images/addtocart.png" class="addtocartbutton"></img>');
 
     //paypal html insert.
     var $paypalform = $this.find('form');

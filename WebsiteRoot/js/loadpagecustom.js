@@ -76,13 +76,9 @@ $(function (){
 			$overlayboxtext.fadeIn(500, function(){
 			});
 			$contactbutton.fadeIn(500, function(){});
-			// $contactbutton.animate({'opacity': '1'}, 500, function(){
-			// 	doBounce($(this), 2, '-1%', 100);
-			// 	$contactbutton.animate({'opacity': '0.3'}, 700, function(){});
-			// });
 		});
 		doBounce($customlogo, 3, '-1%', 150);
-		// $overlayboxtext.fadeIn(1200, function(){});
+
 		//on hover and on click cases for the contact button
 		$contactbutton.mouseenter(function(){
 			$(this).css({
@@ -96,8 +92,6 @@ $(function (){
 			});
 		});
 		$contactbutton.click(function(){
-			//window.location.replace("contact.html");
-			//instead of opening new window. popup window.
 			var $formselect = $('body form');
 			$('body').append('<div class="background-overlay"></div><div class="form-viewer" ><img src="images/exit.svg"></img><div class="form-viewer-inside"><p>OOS Contact Form</p>' + $formselect[0].outerHTML + '</div></div>');
 			var $formviewer = $('.form-viewer');
@@ -220,21 +214,7 @@ $(function (){
 		$elemToRemove.remove();
 		$elemToRemove2.remove();
 		$elemToRemove3.remove();
-		// $overlayservicebox.animate({'opacity': '0'}, 350, function(){
-		// 	$elemToRemove.remove();
-		// });
-		// $overlayboxtext.fadeOut(350, function(){
-		// 	$elemToRemove2.remove();
-		// });
-	
-		// $customimages.eq(currentIndex).animate({
-		// 		'width': '-=20%',
-		// 		'margin-top': '-=-4%',
-		// 		'margin-left': '-=-10%',
-		// 	}, 100, function(){				
-		// });
 	});
-
 
 });
 

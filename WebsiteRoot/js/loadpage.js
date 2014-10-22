@@ -159,13 +159,6 @@
 // }
 
 // fadeAnimate(sliderViewerElem, "opacity", "", 0, 1, 1000); //fade background in
-$('.slider-viewer').css({
-    'display': 'none',
-});
-$('.slider-viewer').fadeIn(1000, function(){
-    $('.OOSlogo').fadeIn(1000, function(){});
-    $('.oldlogo').fadeIn(1000, function(){});
-});
 
 // var headTimer = setInterval(function(){ //header pull down
 // 	if(isFading === false){
@@ -189,6 +182,17 @@ $('.slider-viewer').fadeIn(1000, function(){
 		// clearInterval(logosTimer);
 	// }
 // }, 25);
+
+//***********************************//
+//*****JQUERY IMPLEMENTATION*********//
+//***********************************//
+
+$('.slider-viewer').css({
+    'display': 'none',
+});
+$('.slider-viewer').fadeIn(1000, function(){
+    $('.OOSlogo').fadeIn(1000, function(){});
+});
 
 
 
