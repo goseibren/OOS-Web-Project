@@ -71,7 +71,7 @@ body{
   display: none;
 }
 
-@media (max-width: 600px){
+@media (max-width: 650px){
   .main-content ul li{
     width: 48%;
   }
