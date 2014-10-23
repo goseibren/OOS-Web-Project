@@ -93,7 +93,7 @@ $(function (){
 		});
 		$contactbutton.click(function(){
 			var $formselect = $('body form');
-			$('body').append('<div class="background-overlay"></div><div class="form-viewer" ><img src="images/exit.svg"></img><div class="form-viewer-inside"><p>OOS Contact Form</p>' + $formselect[0].outerHTML + '</div></div>');
+			$('body').prepend('<div class="background-overlay"></div><div class="form-viewer" ><img src="images/exit.svg"></img><div class="form-viewer-inside"><p>OOS Contact Form</p>' + $formselect[0].outerHTML + '</div></div>');
 			var $formviewer = $('.form-viewer');
 			var $backgroundoverlay = $('body .background-overlay');
 			var $formselectviewer = $formviewer.find('form');
@@ -103,7 +103,7 @@ $(function (){
 		        'position': 'fixed',
 		        'width': '100%',
 		        'height': '100%',
-		        'z-index': '50',
+		        'z-index': '30',
 		        'background': 'black',
 		        'opacity': '0.6', 
    			});

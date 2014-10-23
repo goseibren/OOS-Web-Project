@@ -74,9 +74,9 @@
 //***************************//
 
 var $prodHeadElem = $('.backgroundfixed');
-var $prodElemListItem = $('.productimages li');
-var $prodElem = $('.productimages ul img');
-var $prodElemText = $('.productimages ul p');
+var $prodElemListItem = $('.main-content li');
+var $prodElem = $('.main-content ul img');
+var $prodElemText = $('.main-content ul p');
 var $prodBoth = $prodElem.add($prodElemText);
 
 $prodHeadElem.css({'opacity': '0'}); //default to 0

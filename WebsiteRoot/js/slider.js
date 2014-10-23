@@ -60,8 +60,8 @@ function move(newIndex){
 	// slideAnimate(slideGroup, "left", "%", currIndex*-100, newIndex*-100, 350);
 	// slideAnimate(slides[currIndex], "opacity", "", 1, 0, 350);
 	// slideAnimate(slides[newIndex], "opacity", "", 0, 1, 350);
- 	$slides.eq(currIndex).fadeOut(400, function(){
- 		$slides.eq(newIndex).fadeIn(600, function(){});
+ 	$slides.eq(currIndex).fadeOut(300, function(){
+ 		$slides.eq(newIndex).fadeIn(400, function(){});
  	});
 	// slides[currIndex].style.display = 'none';
 	// slides[newIndex].style.left = '0';
