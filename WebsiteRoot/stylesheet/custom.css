@@ -135,49 +135,55 @@ body .main-content form {
 }*/
 
 @media (max-width: 1150px){
-  .main-content ul div{
-    padding: 0;
-    height: 300px;
+
+    .main-content ul div{
+      padding: 0;
+      height: 300px;
+
+    }
+
+    .main-content  ul div #circlering {
+    position: absolute;
+    z-index: 100;
+    width: 100px;
+    left: 0;
+    top: 0;
   }
 
-  .main-content  ul div #circlering {
-  position: absolute;
-  z-index: 100;
-  width: 100px;
-  left: 0;
-  top: 0;
-}
+  .main-content  ul div #silkscreen {
+    position: absolute;
+    z-index: 100;
+    left: 15px;
+    top: 13px;
+    width: 68px;
+  }
 
-.main-content  ul div #silkscreen {
-  position: absolute;
-  z-index: 100;
-  left: 15px;
-  top: 13px;
-  width: 68px;
-}
+  .main-content  ul div #heatpress {
+    position: absolute;
+    z-index: 100;
+    left: 15px;
+    top: 18px;
+    width: 70px;
+  }
 
-.main-content  ul div #heatpress {
-  position: absolute;
-  z-index: 100;
-  left: 15px;
-  top: 18px;
-  width: 70px;
-}
+  .main-content ul div #stickers {
+    position: absolute;
+    z-index: 100;
+    left: 19px;
+    top: 15px;
+    width: 65px;
+  }
+  .main-content  ul div p{
+    position: absolute;
+    color: white;
+    left: 105px;
+    top: 0;
+    font-size: 25;
+    z-index: 10;
+  }
 
-.main-content ul div #stickers {
-  position: absolute;
-  z-index: 100;
-  left: 19px;
-  top: 15px;
-  width: 65px;
-}
-.main-content  ul div p{
-  position: absolute;
-  color: white;
-  left: 105px;
-  top: 0;
-  font-size: 25;
-  z-index: 10;
-}
+  #contactbutton{
+    width: 100px !important;
+  }
 
 }

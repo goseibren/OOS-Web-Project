@@ -111,6 +111,11 @@ $prodElemListItem.mouseleave(function(){
 });
 
 $prodElemListItem.click(function(){
+    //global variables
+
+    var PVwidth = 1000;
+    var PVheight = 700;
+
     //variables
     var $bodyselect = $('body');
     $bodyselect.prepend('<div class="backgroundoverlay"></div>');
@@ -140,6 +145,11 @@ $prodElemListItem.click(function(){
     var $productnamepv = $('.product-name-pv');
     var $productcostpv = $('.product-cost-pv');
 
+    //add product viewer image selector
+
+    $productviewer.append('<div class="image-selector"></div>');
+    var $imageselector = $('.image-selector');
+
     //paypal html insert.
     var $paypalform = $this.find('form');
     $productviewerdesc.append($paypalform[0].outerHTML);
@@ -158,45 +168,58 @@ $prodElemListItem.click(function(){
         'width': '95%',
     });
     $shirtpviewerimage.css({
-        'position': 'absolute',
-        'height': '100%',
+        'position': 'relative',
+        'width': '100%',
+        'height': '85%',
         'z-index': '5',
-        'border-right': '1px solid black',
+        'border-bottom': '1px solid black',
+    });
+    $imageselector.css({
+        'width': '100%',
+        'height': '15%',
+        // 'border': '3px solid red',
     });
     $exitimage.css({
         'position': 'absolute',
         'z-index': '100',
         'width': '4%',
     });
-    $productviewerwrapper.css({
-        'position': 'fixed',
-        'width': '30%',
-        'padding-bottom': '30%',
-        'background': 'white',
-        'z-index': '60',
-        'top': '20%',
-        'left': '26%',
-        // 'display': 'none'
-    });
-    $productviewerwrapper.css({
-        'top': '-100%',
-    });
+    // $productviewerwrapper.css({
+    //     'position': 'fixed',
+    //     'width': PVwidth + 'px',
+    //     'height': PVheight +'px',
+    //     'background': 'white',
+    //     'z-index': '200',
+    //     'margin': 'auto',
+    //     'display': 'block',
+    //     'top': '0',
+    //     'bottom': '0',
+    //     'left': '0',
+    //     'right': '0', 
+    //     // 'border': '2px solid red',
+    //          // 'display': 'none'
+    // });
+    // $productviewerwrapper.css({
+    //     'top': '-100%',
+    // });
     $productviewer.css({
         'position': 'absolute',
-        'width': '100%',
+        'width': '60%',
         'height': '100%',
         // 'border': '2px solid red',
         'z-index': '10',
+        'border-right': '1px solid black',
     });
     $productviewerdesc.css({
         'position': 'absolute',
-        'width': '65%',
+        'width': '40%',
         'height': '100%',
         // 'border': '2px solid blue',
         'z-index': '5',
         // 'left': '100%', //end of animation
         'background': 'white',
         'overflow': 'scroll',
+        'right': '0',
     });
     $productnamepv.css({
         'position': 'relative',
@@ -228,9 +251,6 @@ $prodElemListItem.click(function(){
         // 'border': '2px solid red',
         'margin-left': '5%',
     });
-    $formselects.css({
-        // 'margin-left': '30%',
-    });
 
     //on exitimage addto cart hover
     $exitimage.mouseenter(function(){
@@ -247,13 +267,13 @@ $prodElemListItem.click(function(){
     });
 
     //animation for product viewer
-    $productviewerwrapper.animate({
-            'top': '20%',
-        }, 800, function(){
-            $productviewerdesc.animate({
-                'left': '100%',
-            }, 800, function(){});
-        });
+    // $productviewerwrapper.animate({
+    //         'top': '20%',
+    //     }, 800, function(){
+    //         $productviewerdesc.animate({
+    //             'left': '100%',
+    //         }, 800, function(){});
+    //     });
 
     //when user clicks away from product viewer delete everything!
     function deleteprodviewer(){
@@ -261,11 +281,7 @@ $prodElemListItem.click(function(){
             'left': '0%',
         }, 300, function(){ 
             $backgroundoverlay.remove();
-            $productviewerwrapper.animate({
-                'top': '-100%',
-            }, 300, function(){
-                $productviewerwrapper.remove();   
-            });
+            $productviewerwrapper.remove();   
         });
     }
 
