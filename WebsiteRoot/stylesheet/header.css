@@ -66,7 +66,7 @@
   }
   .youtube{
     width: 17%;
-    margin: 0% 0% 0% 5%;
+    margin: 0% 0% 2% 5%;
   }
 
 
@@ -115,30 +115,6 @@
     background-color: none;
   }
 
-  /*drop down menu*/
-  .drop-down-menu{
-    height: 250px;
-    width: 100%;
-    background: black;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
-  }
-  .drop-down-menu .drop-down-menu-buttons{
-    width: 100%;
-    height: 100%;
-  }
-  .drop-down-menu .drop-down-menu-buttons li{
-    font-color: white;
-    height: 16%;
-    width: 100%;
-    text-align: center;
-    display: inline-block;
-    float: left;
-    font-size: 20px;
-    color: white;
-    line-height: 45px;
-  }
-
   /*TABLET*/
 
   .nav .top-left-tablet{
@@ -164,6 +140,10 @@
   }
 
   .nav .top-middle-mobile{
+    display: none;
+  }
+
+  .drop-down-menu{
     display: none;
   }
 
@@ -199,6 +179,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
+    pointer-events: none;
   }
   .nav .top-middle-tablet img{
     height: 45px;
@@ -317,6 +298,68 @@
     height: 80%;
     top: 8px;
     right: 15;
+  }
+
+    /*drop down menu*/
+  .drop-down-menu{
+    display: block;
+    height: 280px;
+    width: 100%;
+    background-color: 055d97;
+    border-bottom: 1px solid black;
+  }
+  .drop-down-menu .drop-down-menu-buttons{
+    width: 100%;
+    height: 100%;
+  }
+  .drop-down-menu .drop-down-menu-buttons li{
+    font-color: white;
+    height: 14%;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    font-size: 25px;
+    color: white;
+    line-height: 45px;
+    border-top: 1px solid black;
+  }
+
+  .drop-down-menu .drop-down-menu-buttons li:hover{
+    color: 049ef4;
+  }
+  .socmedrecttablet{
+    position: relative;
+    width: 220px;
+    display: block;
+    margin: auto;
+    top: 2px;
+  }
+  .socmedrecttablet img{
+    position: relative;
+    width: 25%;
+    float: left;
+    display: block;
+    margin: auto;
+
+  }
+
+  .socmedrecttablet .instagram{
+    width: 17%;
+    margin: 0% 0% 0% 15%;
+  }
+  .socmedrecttablet .facebook{
+    width: 17%;
+    margin: 0% 0% 0% 1%;
+  }
+  .socmedrecttablet .twitter{
+    width: 17%;
+    margin: 1% 0% 2% 5%;
+    /*margin: 0px auto auto 20px;*/
+  }
+  .socmedrecttablet .youtube{
+    width: 16%;
+    margin: 1% 0% 0% 5%;
   }
 
 }

@@ -121,7 +121,7 @@ $prodElemListItem.click(function(){
     $bodyselect.prepend('<div class="backgroundoverlay"></div>');
     var $backgroundoverlay = $('.backgroundoverlay');
     var $this = $(this);
-    var $thisshirtimage = $this.find('img');
+    var $thisshirtimage = $this.find('.product-default');
     var $thisshirtimagesrc =  $thisshirtimage.attr("src");
     var $productname = $this.find('.product-name');
     var $productprice = $this.find('.product-cost');
@@ -135,7 +135,7 @@ $prodElemListItem.click(function(){
         'opacity': '0.6',
     });
 
-    $bodyselect.prepend('<div class="productviewerwrapper"><img src="images/exit.svg" class="exitimg"></img><div class="productviewer"><img src="' + $thisshirtimagesrc + '"></img></div><div class=productviewerdesc><p class="product-name-pv">' + $productname.text() + '</p><p class="product-cost-pv"></div></div>');
+    $bodyselect.prepend('<div class="productviewerwrapper"><img src="images/exit.svg" class="exitimg"></img><div class="productviewer"><img class="current-product-image" src="' + $thisshirtimagesrc + '"></img></div><div class=productviewerdesc><p class="product-name-pv">' + $productname.text() + '</p><p class="product-cost-pv"></div></div>');
 
     var $productviewer = $('.productviewer');
     var $productviewerwrapper = $('.productviewerwrapper');
@@ -145,15 +145,75 @@ $prodElemListItem.click(function(){
     var $productnamepv = $('.product-name-pv');
     var $productcostpv = $('.product-cost-pv');
 
+    //add logo to product viewer
+    $productviewer.append('<img class="pvlogo" src="images/logoblue.svg"></img>');
+
+
     //add product viewer image selector
 
     $productviewer.append('<div class="image-selector"></div>');
     var $imageselector = $('.image-selector');
+    //add all images to image seelctor
+    var $thisproductotherimages = $this.find('.product-other');
+    var $thisdefaultproductimage = $this.find('.product-default');
+
+    $imageselector.append('<img src="' + $thisdefaultproductimage.attr('src') + '" ></img>');
+    $imageselector.find('img').addClass('product-active');
+    for(index = 0; index < $thisproductotherimages.length; index++){
+        $imageselector.append('<img src="' + $thisproductotherimages.eq(index).attr('src') +'" ></img>');
+    }
+
+    //productviewer default image color overlay
+    var $productvieweractiveimage = $('.productviewer .image-selector .product-active');
+    $productvieweractiveimage.css({
+        'opacity': '0.5',
+    });
+
+    //animation for productviewerwrapper
+    $productviewerwrapper.css({
+        'display': 'none',
+    });
+    $productviewerwrapper.fadeIn(1000, function(){});
+
+    //if productviewer image is clicked change the productviewer image to that image and highlight it
+    $imageselector.find('img').click(function(){
+        var $thisimage = $(this);
+        var $currentproductimage = $('.productviewer .current-product-image');
+        var $oldactiveproductimage = $('.productviewer .product-active');
+
+        // var activeimagesrc = $productvieweractiveimage.attr('src');
+        // var oldcurrentimagesrc = $currentproductimage.attr('src');
+        $oldactiveproductimage.animate({
+            'opacity': '1'
+        }, 500, function(){});
+        // $oldactiveproductimage.css({
+        //     'opacity': '1',
+        // });
+        $oldactiveproductimage.removeClass('product-active');
+
+
+        $currentproductimage.attr('src', $thisimage.attr('src'));
+        $currentproductimage.css({
+            'opacity': '0',
+        });
+        $currentproductimage.animate({
+            'opacity': '1',
+        }, 600, function(){});
+
+        $thisimage.addClass('product-active');
+
+        $('.productviewer .product-active').animate({
+            'opacity': '0.5',
+        }, 500, function(){})
+        // $('.productviewer .product-active').css({
+        //     'opacity': '0.5',
+        // });
+
+    });
 
     //paypal html insert.
     var $paypalform = $this.find('form');
     $productviewerdesc.append($paypalform[0].outerHTML);
-    console.log($paypalform[0].outerHTML);
     
     var $addtocart = $productviewerdesc.find('input[name=submit]');
     var $productsizespv = $productviewerdesc.find('.item-sizes');
@@ -164,25 +224,24 @@ $prodElemListItem.click(function(){
 
     //css for product viewer
     $paypalformpv.css({
-        'margin-top': '10%',
-        'width': '95%',
+        'margin-top': '10px',
+        'width': '100%',
     });
     $shirtpviewerimage.css({
         'position': 'relative',
         'width': '100%',
         'height': '85%',
         'z-index': '5',
-        'border-bottom': '1px solid black',
     });
     $imageselector.css({
         'width': '100%',
         'height': '15%',
-        // 'border': '3px solid red',
+        'border-top': '1px solid black',
     });
     $exitimage.css({
         'position': 'absolute',
         'z-index': '100',
-        'width': '4%',
+        'width': '3%',
     });
     // $productviewerwrapper.css({
     //     'position': 'fixed',
@@ -218,7 +277,6 @@ $prodElemListItem.click(function(){
         'z-index': '5',
         // 'left': '100%', //end of animation
         'background': 'white',
-        'overflow': 'scroll',
         'right': '0',
     });
     $productnamepv.css({
@@ -226,7 +284,7 @@ $prodElemListItem.click(function(){
         'width': '100%',
         'text-align': 'center',
         'font-size':'25px',
-        'margin-top': '15%'
+        'margin-top': '10%'
     });
     $productcostpv.css({
         'width': '100%',
@@ -243,13 +301,18 @@ $prodElemListItem.click(function(){
     });
     $addtocart.css({
         'width': '40%',
-        'margin-left': '32%',
-        'margin-top': '10%',
+        'display': 'block',
+        'margin': 'auto',
+        'margin-top': '5%',
     });
     //form input and select css
     $forminputs.css({
-        // 'border': '2px solid red',
         'margin-left': '5%',
+    });
+    $paypalformpv.css({
+    });
+    $formselects.css({
+        'font-size': '20px',
     });
 
     //on exitimage addto cart hover
@@ -277,12 +340,8 @@ $prodElemListItem.click(function(){
 
     //when user clicks away from product viewer delete everything!
     function deleteprodviewer(){
-        $productviewerdesc.animate({
-            'left': '0%',
-        }, 300, function(){ 
-            $backgroundoverlay.remove();
-            $productviewerwrapper.remove();   
-        });
+        $backgroundoverlay.remove();
+        $productviewerwrapper.remove();   
     }
 
     $backgroundoverlay.click(function(){
