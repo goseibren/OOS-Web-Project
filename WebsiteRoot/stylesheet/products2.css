@@ -68,6 +68,10 @@ body{
   color: black;
 }
 
+.main-content ul li .product-description{
+  display: none;
+}
+
 .main-content ul select{
   display: none;
 }
@@ -120,6 +124,9 @@ body{
   .productviewerwrapper{
     width: 700px;
     height: 400px;
+  }
+  .exitimg{
+    width: 30px !important;
   }
 }
 

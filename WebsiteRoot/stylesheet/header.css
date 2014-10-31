@@ -152,6 +152,8 @@
 @media (max-width: 1260px){
   .nav{
     width: 100%;
+    border-left: none;
+    border-right: none;
   }
   .headrectwrapper{
     display: none;

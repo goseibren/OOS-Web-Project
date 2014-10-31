@@ -125,6 +125,7 @@ $prodElemListItem.click(function(){
     var $thisshirtimagesrc =  $thisshirtimage.attr("src");
     var $productname = $this.find('.product-name');
     var $productprice = $this.find('.product-cost');
+    var $productdescription = $this.find('.product-description');
 
     $backgroundoverlay.css({
         'position': 'fixed',
@@ -135,7 +136,7 @@ $prodElemListItem.click(function(){
         'opacity': '0.6',
     });
 
-    $bodyselect.prepend('<div class="productviewerwrapper"><img src="images/exit.svg" class="exitimg"></img><div class="productviewer"><img class="current-product-image" src="' + $thisshirtimagesrc + '"></img></div><div class=productviewerdesc><p class="product-name-pv">' + $productname.text() + '</p><p class="product-cost-pv"></div></div>');
+    $bodyselect.prepend('<div class="productviewerwrapper"><img src="images/exit.svg" class="exitimg"></img><div class="productviewer"><img class="current-product-image" src="' + $thisshirtimagesrc + '"></img></div><div class=productviewerdesc><p class="product-name-pv">' + $productname.text() + '</p><p class="product-cost-pv"><p class="product-description-pv">' + $productdescription.html() + '</p></div></div></div>');
 
     var $productviewer = $('.productviewer');
     var $productviewerwrapper = $('.productviewerwrapper');
@@ -144,6 +145,7 @@ $prodElemListItem.click(function(){
     var $productviewerdesc = $('.productviewerdesc');
     var $productnamepv = $('.product-name-pv');
     var $productcostpv = $('.product-cost-pv');
+    var $productdescriptionpv = $('.product-description-pv');
 
     //add logo to product viewer
     $productviewer.append('<img class="pvlogo" src="images/logoblue.svg"></img>');
@@ -291,10 +293,14 @@ $prodElemListItem.click(function(){
         'text-align': 'center',
         'font-size': '20px',
     });
+    $productdescriptionpv.css({
+        'text-align': 'center',
+        'margin-top': '5%',
+    });
     $productsizespv.css({
         'width': '30%',
         'margin-left': '20%',
-        'margin-top': '15%',
+        'margin-top': '5%',
     });
     $productcolorspv.css({
         'width': '30%',
