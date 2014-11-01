@@ -15,12 +15,12 @@ if(empty($firstname)||empty($lastname)||empty($emailaddress)){
 }
 else{
 
-$email_from = "byamaguchi92@gmail.com";
+$email_from = "Mike@outownstyle.com";
 
 $email_subject = $servicetype . " - OOS Web Contact Form";
 $email_body = "you have recieved a new message from the user " . $firstname . " " . $lastname . "." . "\n" . "email address: " . $emailaddress . "\n" . "Here is the message:\n " . $details;
 
-$to = "byamaguchi92@gmail.com";
+$to = "Mike@outownstyle.com";
 $headers = "From: $email_from \r\n";
 
 //send the email

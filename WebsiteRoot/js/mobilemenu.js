@@ -1,5 +1,5 @@
 //mobilemenu for mobile view
-
+$(function (){
 var $toprightmobile = $('.top-right-mobile');
 var $toprightmobileimg=$('.top-right-mobile img');
 var $topmiddlemobile = $('.top-middle-mobile');
@@ -29,7 +29,7 @@ $('.top-left-mobile img').click(function(){
 		$dropdownmenu.append("<ul class='drop-down-menu-buttons'></ul>");
 		var $dropdownbuttons = $('.drop-down-menu-buttons');
 		$dropdownbuttons.append('<a href="index.html"><li>Home</li></a>');
-		$dropdownbuttons.append('<a href="http://www.ourownlifestyle.com" target="_blank"><li>Lifestyle</li></a>');
+		$dropdownbuttons.append('<a href="lifestyle.html"><li>Lifestyle</li></a>');
 		$dropdownbuttons.append('<a href="products2.html"><li>Products</li></a>');
 		$dropdownbuttons.append('<a href="custom.html"><li>Custom</li></a>');
 		$dropdownbuttons.append('<a href="contact.html"><li>Contact</li></a>');
@@ -42,6 +42,7 @@ $('.top-left-mobile img').click(function(){
 		$('.drop-down-menu').remove();
 		$('.top-left-mobile img').attr("src", "images/dropdown.png");
 	}
+});
 });
 //hover effect for menu items
 

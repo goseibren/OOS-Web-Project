@@ -187,6 +187,8 @@
 //*****JQUERY IMPLEMENTATION*********//
 //***********************************//
 
+$(function(){
+
 $('.slider-viewer').css({
     'display': 'none',
 });
@@ -194,6 +196,6 @@ $('.slider-viewer').fadeIn(1000, function(){
     $('.OOSlogo').fadeIn(1000, function(){});
 });
 
-
+});
 
 

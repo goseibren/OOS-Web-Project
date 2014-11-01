@@ -72,7 +72,7 @@
 //***************************//
 //***JQUERY IMPLEMENTATION***//
 //***************************//
-
+$(function (){
 var $prodHeadElem = $('.backgroundfixed');
 var $prodElemListItem = $('.main-content li');
 var $prodElem = $('.main-content ul img');
@@ -148,7 +148,7 @@ $prodElemListItem.click(function(){
     var $productdescriptionpv = $('.product-description-pv');
 
     //add logo to product viewer
-    $productviewer.append('<img class="pvlogo" src="images/logoblue.svg"></img>');
+    $productviewerdesc.append('<img class="pvlogo" src="images/LogoBlue.svg"></img>');
 
 
     //add product viewer image selector
@@ -356,6 +356,7 @@ $prodElemListItem.click(function(){
     $exitimage.click(function(){
         deleteprodviewer();
     });
+});
 });
 
 

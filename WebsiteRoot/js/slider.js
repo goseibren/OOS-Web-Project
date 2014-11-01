@@ -172,6 +172,7 @@ $buttons.mouseenter(function(){
 $buttons.mouseleave(function(){
 	$(this).animate({'opacity': '0.7'}, 0, function(){
 	});
-})
+});
+
  
 
