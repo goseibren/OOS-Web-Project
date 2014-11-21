@@ -26,6 +26,7 @@ $headers = "From: $email_from \r\n";
 //send the email
 mail($to, $email_subject, $email_body, $headers);
 //done, redirect to thank you page
-echo "your message has been sent";
+//echo "your message has been sent"; old way of doing it just plain text
+header('Location: ../thankyou.html');
 }
 ?>

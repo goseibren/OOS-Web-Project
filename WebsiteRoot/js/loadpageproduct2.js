@@ -149,6 +149,7 @@ $prodElemListItem.click(function(){
 
     //add logo to product viewer
     $productviewerdesc.append('<img class="pvlogo" src="images/LogoBlue.svg"></img>');
+    $productviewerdesc.append('<div class = "product-desc-fs">' + $('.free-shipping-text').text() + '</div>');
 
 
     //add product viewer image selector

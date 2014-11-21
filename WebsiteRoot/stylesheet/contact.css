@@ -144,6 +144,21 @@
   margin-right: auto;
 }
 
+/*thank you page stuff*/
+
+.thank-you-text-wrapper{
+  width: 100%;
+  height: 600px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.thank-you-text{
+  margin: auto;
+  position: absolute;
+  top: 20%; right: 0; left: 0;
+  height: 400px;
+}
 /*.productimages #shirts p{
   color: black;
   z-index: 10;

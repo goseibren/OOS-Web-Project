@@ -117,6 +117,20 @@ body{
   z-index: 100;
 }
 
+.free-shipping-text{
+  height: auto;
+  width: 100%;
+  text-align: center;
+  color: red;
+  font-size: 30px;
+  line-height: 80px;
+}
+
+.product-desc-fs{
+  width: 100%;
+  color: red;
+  text-align: center;
+}
 
 /***** TABLET VIEW MEDIA QUERY ******/
 
