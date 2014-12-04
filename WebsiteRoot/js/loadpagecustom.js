@@ -20,7 +20,7 @@ $(function (){
 
 		switch(currentIndex){
 			case 0:
-				$this.prepend('<p class="middletext">Since everything is done in house at OurOwnStyle, we are happy to offer custom screen printing. Do you have your own design that you want printed on a t-shirt? Do you have a family reunion coming up and want t-shirts printed for everyone? For whatever the situation, we would be more than happy to help accommodate your needs. It iss not just limited to t-shirts; we also print on sweatshirts and sweatpants to name a few. Please check with us regarding other types of printables.</p>');
+				$this.prepend('<p class="middletext">Since everything is done in house at OurOwnStyle, we are happy to offer custom screen printing. Do you have your own design that you want printed on a t-shirt? Do you have a family reunion coming up and want t-shirts printed for everyone? For whatever the situation, we would be more than happy to help accommodate your needs. It is not just limited to t-shirts; we also print on sweatshirts and sweatpants to name a few. Please check with us regarding other types of printables.</p>');
 				break;
 			case 1:
 				$this.prepend('<p class="middletext">Heat transfer plays a big role when it comes to customization. Whether it is adding numbers on a jersey or different colors/designs to an assortment of shirts, heat transfer may be the economical alternative to screen printing.</p>');	
