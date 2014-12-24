@@ -1,85 +1,6 @@
-<DOCTYPE! html>
-<html>
-	<head>
-		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-		<title>OOS Products</title>	
-		<link rel="stylesheet" type="text/css" href="stylesheet/header.css">
-		<link rel="stylesheet" type="text/css" href="stylesheet/general-layout.css">
-		<link rel="stylesheet" type="text/css" href="stylesheet/products2.css">
-		<meta name="viewport" content="initial-scale=1">
-	</head>
-	<body>
-		<div class="headrectwrapper">
-			<div class="headrect">
-				<a href="index.html">
-					<img src="images/LogoBlue.svg" class="OOSlogo"></img>
-					<img src="images/oldlogowhite.png" class="oldlogo"></img>
-				</a>
-			</div>
-			<div class="socmedrect">
-				<a href="http://www.instagram.com/ooslifestyle" target="_blank"><img src="images/instagramwhite.png" class="instagram" onmouseover="this.src = 'images/instagramhover.png'"; onmouseout="this.src='images/instagramwhite.png';"></img></a>
-				<a href="http://www.facebook.com/ourownstyle" target="_blank"><img src="images/facebookwhite.png" class="facebook" onmouseover="this.src = 'images/facebookwhitehover.png';" onmouseout="this.src='images/facebookwhite.png';"></img></a>
-				<a href="http://www.twitter.com/ourownstyle" target="_blank"><img src="images/twitterwhite.png" class="twitter" onmouseover="this.src = 'images/twitterhover.png';" onmouseout="this.src='images/twitterwhite.png';"></img></a>
-				<a href="http://vimeo.com/user7614489"target="_blank"><img src="images/youtube.png" class="youtube" onmouseover="this.src = 'images/youtubehover.png';" onmouseout="this.src='images/youtube.png';"></img></a>
-			</div>
-		</div>
-		<div class="nav">
-			<!-- TABLET AND DESKTOP LAY OUT -->
-			<div class="top-left-tablet">
-				<img src="images/LogoBlue.svg"></img>
-			</div>
-			<ul class="MenuButtons">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="lifestyle.html">Lifestyle</a></li>
-				<li><a href="#" style="color: 049ef4">Products</a></li>
-				<li><a href="custom.html">Custom</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_cart&business=B9JGLU8BQFTBE&display=1&shopping_url=http://www.ourownstyle.com/products2.html">Cart</a></li>
-			</ul>
-			<div class="top-middle-tablet">
-				<img src="images/oldlogowhite.png"></img>
-			</div>
-			<div class="top-right-tablet">
-				<div class="socmedrect">
-					<a href="http://www.instagram.com/ooslifestyle" target="_blank"><img src="images/instagramwhite.png" class="instagram" onmouseover="this.src = 'images/instagramhover.png'"; onmouseout="this.src='images/instagramwhite.png';"></img></a>
-					<a href="http://www.facebook.com/ourownstyle" target="_blank"><img src="images/facebookwhite.png" class="facebook" onmouseover="this.src = 'images/facebookwhitehover.png';" onmouseout="this.src='images/facebookwhite.png';"></img></a>
-					<a href="http://www.twitter.com/ourownstyle" target="_blank"><img src="images/twitterwhite.png" class="twitter" onmouseover="this.src = 'images/twitterhover.png';" onmouseout="this.src='images/twitterwhite.png';"></img></a>
-					<a href="http://vimeo.com/user7614489"target="_blank"><img src="images/youtube.png" class="youtube" onmouseover="this.src = 'images/youtubehover.png';" onmouseout="this.src='images/youtube.png';"></img></a>
-				</div>
-			</div>
-			<!-- ONLY FOR MOBILE LAYOUT -->
-			<div class="top-left-mobile">
-				<img src="images/dropdown.png"></img>
-			</div>
-			<div class="top-middle-mobile">
-				<img src="images/OOStabletlogo.png"></img>
-			</div>
-			<div class="top-right-mobile">
-				<img src="images/shoppingcart.png"></img>
-			</div>
-		</div>
-		<div id="headercoloroverlay">
-		</div>
-		<div class="backgroundfixed" style="background-image: url('images/headerpicture.jpg');">
-			<div id="productheader">
-				<p id="prodheadtext">DESIGNS</p>
-			</div>
-		</div>
-		<div class="main-content">
-			<!-- <div id="background2">
-				<div id ="footer">
-					<div id = "footertext">
-						<p class ="torrance">Torrance, CA</p>
-						<p class="trademark">&copy 2014 OurOwnStyle</p>
-					</div>
-				</div>
-			</div> -->
-			<!-- <ul id="sortbar">
-				<li> --> 
-			</ul>
-			<ul id="shirts">
-				<div class = "free-shipping-text">*FREE Shipping on all orders!*</div>
-				<!-- COPY PASTE THIS FROM THIS li TO ADD ANOTHER PRODUCT -->
+//just to save the paypal forms
+
+<!-- COPY PASTE THIS FROM THIS li TO ADD ANOTHER PRODUCT -->
 				<li>
 					<!-- all images of product goes here class default is default picture Between Here-->
 					<!-- CLASSES: product-default, product-other -->
@@ -534,15 +455,3 @@
 					<!-- **************************************** -->
 				</li>
 				<!-- COPY PASTE THIS FROM THIS li TO ADD ANOTHER PRODUCT -->
-			<script src="js/jquery-1.11.1.min.js"></script>
-			<script src="js/loadpageproduct2.js"></script>
-			<script src="js/mobilemenu.js"></script>
-		</div>
-	</body>
-	<footer>
-		<div id = "footertext">
-						<p class ="torrance">Torrance, CA</p>
-						<p class="trademark">&copy 2014 OurOwnStyle</p>
-					</div>
-	</footer>
-</html>
