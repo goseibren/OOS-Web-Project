@@ -1,3 +1,40 @@
+<?php 
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+	$firstname = $_POST['firstname'];
+	$lastname = $_POST['lastname'];
+	$emailaddress = $_POST['emailaddress'];
+	$phonenumber = $_POST['phonenumber'];
+	$servicetype = $_POST['servicetype'];
+	$details = $_POST['details'];
+
+	if(empty($firstname)||empty($lastname)||empty($emailaddress)){
+		echo "Name and Email are mandatory!";
+		exit;
+	}
+	else{
+
+		$email_from = "Mike@ourownstyle.com";
+
+		$email_subject = $servicetype . " - OOS Web Contact Form";
+		$email_body = "you have recieved a new message from the user " . $firstname . " " . $lastname . "." . "\n" . "email address: " . $emailaddress . "\n" . "Here is the message:\n " . $details;
+
+		$to = "Mike@ourownstyle.com";
+		$headers = "From: $email_from \r\n";
+
+		//send the email
+		mail($to, $email_subject, $email_body, $headers);
+
+		//done, redirect to thank you page
+		//echo "your messae has been sent"; old way of doing it just plain text
+		
+		header("Location: contact.php?status=thanks");
+		exit;
+	}
+}
+
+?>
+
 <DOCTYPE! html>
 <html>
 	<head>
@@ -23,13 +60,24 @@
 		</div>
 		</div>
 		<div class="main-content">
+
+			<?php if(isset($_GET["status"]) AND $_GET["status"] == "thanks"){ ?>
+
+			<div class="thank-you-text-wrapper">
+					<div class="thank-you-text">
+					Thank You!<br>Your form has been submitted.<br>We will get back to you as soon as we can.<br>
+					</div>
+			</div>
+
+			<?php } else { ?>
+
 			<div id="contact-textbox">
 				<p class="contact-text1">Questions. Concerns. Orders. Anything.</p>
 				<p class="contact-text2">We'd love to hear from you.</p>
 			</div>
 			<div id="form-wrapper">
 				<!-- HTML Form for contacting OOS -->
-				<form method="post" name="myemailform" action="php/form-to-email.php">
+				<form method="post" name="myemailform" action="contact.php">
 					<p class="form-title">OOS Contact Form</p>
 					<input type="text" name="firstname" placeholder="First Name"></input>
 					<input type="text" name="lastname" placeholder="Last Name"></input>
@@ -45,6 +93,7 @@
 					<button type="submit" class="btn" name="submit">Submit</button>
 				</form>	
 			</div>
+			<?php } ?>
 			<ul id="contactimages">
 				<li><img class="contactimg1" src="images/contactimage1.jpg"></img></li>
 				<li><img class="contactimg2" src="images/contactimage2.jpg"></img></li>

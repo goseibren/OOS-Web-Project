@@ -18,6 +18,8 @@ class Video{
 
 }
 
+//add new video lifestyle videos here
+
 $lifestyle_videos = array();
 $lifestyle_videos[] = new Video("113033234");
 $lifestyle_videos[] = new Video("114303803");
