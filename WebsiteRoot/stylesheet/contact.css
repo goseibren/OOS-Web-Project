@@ -165,6 +165,14 @@
   opacity: 0;
 }*/
 
+.main-content .error-message {
+  position: relative;
+  text-align: center;
+  font-size: 25px;
+  color: red;
+  margin-top: 50px;
+}
+
 /*---------------------------*/
 /*---------SIDENAV-----------*/
 /*---------------------------*/

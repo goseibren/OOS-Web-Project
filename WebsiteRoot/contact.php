@@ -10,61 +10,59 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$details = ($_POST['details']);
 
 	if(empty($firstname)||empty($lastname)||empty($emailaddress)){
-		echo "Name and Email are mandatory!";
-		exit;
+		$error_message = "Name and Email are mandatory!";
 	}
 
+	if(!isset($error_message))
 	foreach( $_POST as $value){
 		if (stripos($value, 'Content-Type:') !== FALSE){
-			echo "there was a problem with the information you entered.";
-			exit;
+			$error_message = "there was a problem with the information you entered.";
 		}
 	}
 
-	if($_POST["address"] != "") {
-		echo "Your form submission has an error.";
-		exit;
+	if(!isset($error_message) && $_POST["address"] != "") {
+		$error_message = "Your form submission has an error.";
 	}
 
 	//phpmailer include and security check
 	require_once("include/phpmailer/class.phpmailer.php");
 	$mail = new PHPMailer();
 
-	if(!$mail->ValidateAddress($emailaddress)){
-		echo "You must specify a valid email address";
-		exit;
+	if(!isset($error_message) && !$mail->ValidateAddress($emailaddress)){
+		$error_message = "You must specify a valid email address";
 	}
 
-	$email_from = "Mike@ourownstyle.com";
+	if (!isset($error_message)) {
+		$email_from = "Mike@ourownstyle.com";
+		$email_subject = $servicetype . " - OOS Web Contact Form";
+		$email_body = "you have recieved a new message from the user " . $firstname . " " . $lastname . "." . "\n";
+		$email_body .= "email address: " . $emailaddress . "\n";
+		$email_body .= "phone number: " . $phonenumber . "\n";
+		$email_body .= "Here is the message:\n " . $details;
 
-	$email_subject = $servicetype . " - OOS Web Contact Form";
-	$email_body = "you have recieved a new message from the user " . $firstname . " " . $lastname . "." . "\n";
-	$email_body .= "email address: " . $emailaddress . "\n";
-	$email_body .= "phone number: " . $phonenumber . "\n";
-	$email_body .= "Here is the message:\n " . $details;
+		// $to = "Mike@ourownstyle.com";
+		// $headers = "From: $email_from \r\n";
 
-	// $to = "Mike@ourownstyle.com";
-	// $headers = "From: $email_from \r\n";
+		// //send the email
+		// mail($to, $email_subject, $email_body, $headers);
 
-	// //send the email
-	// mail($to, $email_subject, $email_body, $headers);
+		$mail->SetFrom($emailaddress, $firstname . " " . $lastname);
+		$address = "Mike@ourownstyle.com";
+		$mail->AddAddress($address, "OOS-Website");
+		$mail->Subject = "OOS Contact Form Submission | " . $firstname . " " . $lastname;
+		$mail->MsgHTML($email_body);
 
-	$mail->SetFrom($emailaddress, $firstname . " " . $lastname);
-	$address = "Mike@ourownstyle.com";
-	$mail->AddAddress($address, "OOS-Website");
-	$mail->Subject = "OOS Contact Form Submission | " . $firstname . " " . $lastname;
-	$mail->MsgHTML($email_body);
+		if($mail->Send()) {
+			header("Location: contact.php?status=thanks");
+			exit;
+		} else {
+			$error_message = "there was a problem sending the email: " . $mail->ErrorInfo;
+		}
 
-	if(!$mail->Send()) {
-		echo "there was a problem sending the email: " . $mail->ErrorInfo;
-		exit;
+		//done, redirect to thank you page
+		//echo "your messae has been sent"; old way of doing it just plain text
 	}
 
-	//done, redirect to thank you page
-	//echo "your messae has been sent"; old way of doing it just plain text
-	
-	header("Location: contact.php?status=thanks");
-	exit;
 }
 
 ?>
@@ -104,27 +102,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			</div>
 
 			<?php } else { ?>
-
+			
 			<div id="contact-textbox">
 				<p class="contact-text1">Questions. Concerns. Orders. Anything.</p>
 				<p class="contact-text2">We'd love to hear from you.</p>
 			</div>
+
+			<?php
+				if (isset($error_message)){
+					echo '<p class="error-message">**' . $error_message . '**</p>';
+				}
+			?>
+
 			<div id="form-wrapper">
 				<!-- HTML Form for contacting OOS -->
 				<form method="post" name="myemailform" action="contact.php">
 					<table>
 						<p class="form-title">OOS Contact Form</p>
-						<input type="text" name="firstname" placeholder="First Name"></input>
-						<input type="text" name="lastname" placeholder="Last Name"></input>
-						<input type="text" name="emailaddress" placeholder="Email Address"></input>
-						<input type="text" name="phonenumber" placeholder="Phone Number"></input>
+						<input type="text" name="firstname" placeholder="First Name" value="<?php if(isset($firstname)){ echo htmlspecialchars($firstname); } ?>">
+						<input type="text" name="lastname" placeholder="Last Name" value="<?php if(isset($lastname)){ echo htmlspecialchars($lastname); } ?>">
+						<input type="text" name="emailaddress" placeholder="Email Address" value="<?php if(isset($emailaddress)){ echo htmlspecialchars($emailaddress); } ?>">
+						<input type="text" name="phonenumber" placeholder="Phone Number" value="<?php if(isset($phonenumber)){ echo htmlspecialchars($phonenumber); } ?>">
 						<select class="form-control" name="servicetype">
 						  <option value="Silk Screening">Silk Screening</option>
 						  <option value="Heat Transfers">Heat Transfers</option>
 						  <option value="Stickers/Decals">Stickers/Decals</option>
 						  <option value="Others">Other</option>
 						</select>
-						<textarea type="text" name="details" rows="3" placeholder="Message/Details"></textarea><br><br>
+						<textarea type="text" name="details" rows="3" placeholder="Message/Details"><?php if(isset($details)){ echo htmlspecialchars($details); } ?></textarea><br><br>
 						<tr style="display: none">
 						<th>
 							<label for="address">Address</label>
@@ -137,7 +142,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 					<button type="submit" class="btn" name="submit">Submit</button>
 				</form>	
 			</div>
-
 			<?php } ?>
 
 			<ul id="contactimages">
